@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    
+    <script>
+        $(function(){
+        // 只用属性 显示属性
+           console.log( $('div').css('width'));
+        // 修改css样式 数字是属性可以不加单位和引号
+        $('div').css('width',400);  
+        // 修改多个属性 用逗号隔开
+        $('div').css({
+            width:400,
+            height:400,
+            // 属性名要采用驼峰命名法 属性不是数字 需要引号
+            backgroundColor:'pink'
+        })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <div>
+        <span>哥把你揣兜里</span>
+    </div>
+   
+    <input type="text" value="2">
+</body>
+<script>
+    $(function(){
+        // 获取内容
+        console.log($('div').html());
+        // 修改内容
+        $('div').html('你把哥踹沟里');
+
+        // 获取文本
+        console.log($('div').text());
+        // 修改文本
+        $('div').text('你把哥踹沟里');
+
+        // 获取表单值
+        console.log($('input').val());
+        // 修改表单值
+        $('input').val(4);
+    })
+</script>
+</html>

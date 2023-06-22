@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            background-color: black;
+        }
+        .content{
+            margin-top: 60px;
+            width: 650px;
+            height: 400px;
+            border: 1px solid white;
+        }
+        .content ul li{
+            float: left;
+            margin: 5px;  
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li><a href="#"><img src="./image/01.jpg"></a></li>
+            <li><a href="#"><img src="./image/02.jpg"></a></li>
+            <li><a href="#"><img src="./image/03.jpg"></a></li>
+            <li><a href="#"><img src="./image/04.jpg"></a></li>
+            <li><a href="#"><img src="./image/05.jpg"></a></li>
+            <li><a href="#"><img src="./image/06.jpg"></a></li>
+        </ul>
+    </div>
+    
+    <script>
+        $(function(){
+            // 事件切换
+            $('.content li').hover(function(){
+                // fadeTo() 让被点击的其他兄弟 的 透明度为0.5
+                $(this).siblings('li').stop().fadeTo(200,0.5)
+            },function(){
+                //  鼠标离开后 被点击的其他兄弟 的 透明度恢复为1
+                $(this).siblings('li').stop().fadeTo(200,1);
+            })
+        })
+    </script>
+</body>
+</html>

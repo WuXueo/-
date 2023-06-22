@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        div{
+            position:absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button>变化</button>
+    <div></div>
+    
+    <script>
+        // 当点击按钮时 盒子开始变化
+        $('button').click(function(){
+            // animate 动画第一个传递参数 复合参数要采用驼峰命名 第二个参数是速度
+            // 如果变化位置的话 一定要记得加绝对位置
+            $('div').animate({
+            width:300,
+            top:300,
+            left:300,
+            opacity:0.4
+        },200);
+        })
+    </script>
+</body>
+</html>

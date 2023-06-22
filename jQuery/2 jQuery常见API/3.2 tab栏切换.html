@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            display:inline-block;
+        }
+        *{
+            margin:0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            margin-top: 100px;
+        }
+        .nav ul{
+            width: 700px;
+            height: 35px;
+            border: 1px solid rgba(202, 202, 202, 0.918);
+            background-color: rgba(237, 236, 236, 0.896);
+            line-height: 35px;
+            text-align: center;
+        }
+        .nav ul li{
+            float: left;
+            margin-right: 15px;
+            font-size: 17px;
+        }
+        .content{
+            width:700px;
+            height: 300px;
+            margin-top: 10px;
+        }
+        .current{
+            background-color: red;
+            width: 160px;
+            height: 35px;
+        }
+        .item{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li><a href="#">商品介绍</a></li>
+                <li><a href="#">规格与包装</a></li>
+                <li><a href="#">售后保障</a></li>
+                <li><a href="#">商品评价（50000）</a></li>
+                <li><a href="#">手机社区</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="item">商品介绍模块</div>
+            <div class="item">规格与包装模块</div>
+            <div class="item">售后保障模块</div>
+            <div class="item">商品评价(50000)模块</div>
+            <div class="item">手机社区模块</div>
+        </div>
+    </div>
+    
+    <script>
+        $(function(){
+            // 点击li 给每个小li绑定事件
+            $('.nav ul li').click(function(){
+                let index = $(this).index();
+                // 给点击的li 添加类 使其背景色改变 其他兄弟样式进行去除
+                $(this).addClass('current').siblings().removeClass('current');
+                // 将对应点击的div 进行查找显示 其他兄弟进行隐藏
+                $('.item').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+</html>

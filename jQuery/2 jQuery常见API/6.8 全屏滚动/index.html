@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fullpage.min.css">
+    <script src="../jQuery.mini.js"></script>
+    <script src="./fullpage.min.js"></script>
+    <style>
+        .section1 { background: url(./img/01.jpg) 50%;}
+        .section2 { background: url(./img/02.jpg) 50%;}
+        .section3 { background: url(./img/03.jpg) 50%;}
+        .section4 { background: url(./img/04.jpg) 50%;}
+        </style>
+</head>
+<body>
+    <div id="dowebok">
+        <div class="section section1"></div>
+        <div class="section section2"></div>
+        <div class="section section3"></div>
+        <div class="section section4"></div>
+    </div>
+    
+    <script>
+        $(function(){
+            $('#dowebok').fullpage();
+        });
+        </script>
+</body>
+</html>

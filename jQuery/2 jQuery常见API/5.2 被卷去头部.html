@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            position: relative;
+            margin: 600px auto;
+            width: 800px;
+            height: 500px;
+            background-color: aqua;
+        }
+        .head{
+            position: absolute;
+            top:800px;
+            right: 100px;
+            background-color: pink;
+            width: 50px;
+            height: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main"></div>
+    <div class="head">返回顶部</div>
+    <script>
+        $(function(){
+            // 将盒子距离文档距离定义
+            let box_top = $('.main').offset().top;
+            // 页面滚动事件
+            $(window).scroll(function(){
+                // 如果文档滚动顶部大于盒子距离文档顶部 右侧顶部显示出来
+                if($(document).scrollTop() >= box_top){
+                $('.head').fadeIn();
+            }
+            // 否则 顶部进行隐藏
+            else{
+                $('.head').fadeOut();
+            }
+            })
+            // 点击顶部 进行动画
+            // 进行操作的元素是html和body 不能是文档
+            $('.head').click(function(){
+                // 这里运用到animate函数 使得scrollTop值为0
+                $('html,body').stop().animate({
+                    scrollTop:0
+                })    
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+    <a href="www.baidu.com" title="百度">百度</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index = '1' data-index="5"></div>
+    <span></span>
+</body>
+<script>
+    $(function(){
+        // 获取元素固有属性值
+        console.log($('a').prop('href'));
+        // 修改属性值
+        $('a').prop('title','这是百度');
+        // 查看复选框状态
+        $('input').change(function(){
+            console.log($(this).prop('checked'));
+        })  
+        
+        // 获取自定义属性
+        console.log($('div').attr('index'));
+        $('div').attr('index',3);
+        // 在H5中获取 或改变
+        console.log($('div').attr('data-index'));
+        // 修改自定义属性
+        $('div').attr('data-index',8);
+
+        // data() 存放在元素内存中
+        $('span').data('username','andy');
+        console.log($('span').data('username'));
+        // 获取H5 不用写data- 而且返回是数字型
+        console.log($('div').data('index'))
+    })
+</script>
+</html>

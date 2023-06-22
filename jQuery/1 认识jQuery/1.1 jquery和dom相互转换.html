@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 一定要引入jquery文件 -->
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            // 将jquery元素转换为dom元素 就可以用dom方法
+            // 第一种
+            $('video')[0].play();
+            // // 第二种
+            // $('video').get(0).play();
+
+        })
+    </script>
+
+    <!-- muted 静音播放 -->
+    <video src="./vedio/liziwei.mp4" muted controls></video>
+    
+</body>
+</html>

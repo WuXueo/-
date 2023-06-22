@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            let obj = { 
+                id:12,
+                sex:'女'
+            };
+            let target_obj = {
+                id:20,
+                name : 'andy',
+                msg:{
+                    age:18
+                }
+            };
+            // 要把目标对象拷贝到对象中  (要拷贝的对象，待拷贝对象)
+            // 默认浅拷贝 已有属性会被覆盖 浅拷贝的复杂数据拷贝的是地址
+            $.extend(obj,target_obj);
+            console.log(obj);
+            // 修改拷贝完的复杂数据对象 那么原数据对象数值也会改变 因为指向的是地址
+            obj.msg.age = 20;
+            console.log(target_obj);
+            // 深拷贝的话 不同属性会进行合并
+            $.extend(true,target_obj,obj);
+            console.log(obj);
+            // 深拷贝的话 修改复杂数据类型 会自己创建一个属于自己的对象 不会指向地址
+            $.extend(true,target_obj,obj);
+            obj.id = 1;
+            console.log(obj);
+        })
+    </script>
+</body>
+</html>

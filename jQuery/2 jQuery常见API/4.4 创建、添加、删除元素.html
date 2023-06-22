@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <ul>
+        <li>我是原先的li</li>
+    </ul>
+    <div>
+        我是原先的div
+    </div>
+</body>
+<script>
+    $(function(){
+        // 动态创建li
+        let li = $("<li>我是后来的li</li>");
+        // 添加li
+        // 内部添加
+        // 添加在前面
+        // $('ul').append(li);
+        // 添加在后面
+        $('ul').prepend(li);
+
+        // 外部添加
+        let div = $('<div>我是后妈生的</div>');
+        // 添加在前面
+        // $('div').before(div);
+        // 添加在后面
+        $('div').after(div);
+        // 注意 外部添加成为兄弟 内部添加成为儿子
+        
+        // 删除节点
+        // 全部删除
+        $('ul').remove();
+        // // 删除子节点
+        // $('div').empty();
+        $('div').html("");
+    })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+</body>
+<script>
+    // on()可以进行委派
+    // 给ul绑定事件 li 会进行弹出
+    $('ul').on('click','li',function(){
+        alert(1);
+    })
+    // 动态创建     
+    let li = $('<li>我是后来的li</li>');
+    $('ul').append(li);
+</script>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的购物车-优品购</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <script src="../jQuery.mini.js"></script>
+    <script src="./购物车的jquery.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <!-- 版心 -->
+        <div class="wrapper">
+            <!-- 左侧导航 -->
+            <span>优品购欢迎您！</span>
+            <a href="#">请登录</a>
+            <a href="#" class="regi">免费注册</a>
+            <!-- 右边导航 -->
+            <ul class="list">
+                <li>我的订单</li>
+                <li>我的优品购</li>
+                <li>优品购会员</li>
+                <li>企业采购</li>
+                <li>关注优品购</li>
+                <li>客户服务</li>
+                <li>网站导航</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- logo -->
+    <div class="logo">
+        <div class="wrapper">
+            <img src="./img/logo.png" class="pic">
+            <h2>购物车</h2>
+        </div>
+    </div>
+
+    <!-- 内容 -->
+   <div class="content">
+        <div class="wrapper">
+            <ul>
+                <li>全部商品</li>
+            </ul>
+            <!-- 商品菜单栏 -->
+            <div class="menu">
+                <div>
+                    <input type="checkbox" class="checkall">全选
+                </div>
+                <div class="goods">
+                    商品
+                </div>
+                <div class="price">
+                    单价
+                </div>
+                <div class="count">
+                    数量
+                </div>
+                <div class="sub">
+                    小计
+                </div>
+                <div class="oper">
+                    操作
+                </div> 
+            </div>
+            <!-- 商品详情 -->
+            <div class="detail">
+                <div class="box">
+                    <!-- 复选框 -->
+                    <input type="checkbox" class="j_check">
+                    <!-- 图书图片 -->
+                    <img src="./img/p1.jpg" class = 'goodss'>
+                    <!-- 图书描述 -->
+                    <span class="txt">【5本26.8元】经典儿童文学彩图青少版八十天环游地球中学生语文教学大纲</span>
+                    <!-- 图书价格 -->
+                    <span class="prices">￥12.60</span>
+                    <!-- 加减框 -->
+                    <div class="counts">
+                        <a href="javascript:;" class="jian">-</a>
+                        <input type="text" class="itxt" value="1">
+                        <a href="javascript:;" class="jia">+</a>
+                    </div>
+                    <!-- 图书小计 -->
+                    <span class="subs">￥12.60</span>
+                    <!-- 操作 -->
+                    <span class="opers">删除</span>
+                </div>
+                <div class="box">
+                    <!-- 复选框 -->
+                    <input type="checkbox" class="j_check">
+                    <!-- 图书图片 -->
+                    <img src="./img/p2.jpg" class = 'goodss'>
+                    <!-- 图书描述 -->
+                    <span class="txt">【2000张贴纸】贴纸书 3-6岁 贴画儿童 贴画书全套12册 贴画 贴纸儿童 汽</span>
+                    <!-- 图书价格 -->
+                    <span class="prices">￥24.80</span>
+                    <!-- 加减框 -->
+                    <div class="counts">
+                        <a href="javascript:;" class="jian">-</a>
+                        <input type="text" class="itxt" value="1">
+                        <a href="javascript:;" class="jia">+</a>
+                    </div>
+                    <!-- 图书小计 -->
+                    <span class="subs">￥24.80</span>
+                    <!-- 操作 -->
+                    <span class="opers">删除</span>
+                </div>
+                <div class="box">
+                    <!-- 复选框 -->
+                    <input type="checkbox" class="j_check">
+                    <!-- 图书图片 -->
+                    <img src="./img/p3.jpg" class = 'goodss'>
+                    <!-- 图书描述 -->
+                    <span class="txt">唐诗三百首+成语故事全2册 一年级课外书 精装注音儿童版 小学生二三年级课外阅读书籍</span>
+                    <!-- 图书价格 -->
+                    <span class="prices">￥29.80</span>
+                    <!-- 加减框 -->
+                    <div class="counts">
+                        <a href="javascript:;" class="jian">-</a>
+                        <input type="text" class="itxt" value="1">
+                        <a href="javascript:;" class="jia">+</a>
+                    </div>
+                    <!-- 图书小计 -->
+                    <span class="subs">￥29.80</span>
+                    <!-- 操作 -->
+                    <span class="opers">删除</span>
+                </div>
+                <!-- 结算框 -->
+                <div class='charge'>
+                    <input type="checkbox" class="checkall">全选
+                    <a href="#" class="remove">删除选中的商品</a>
+                    <a href="#" class="remove"><em>清理购物车</em>
+                        <!-- 结算右侧 -->
+                    <div class="jiesuan">
+                        <span class="remove">已经选了<b>3</b>件商品</span>
+                        <span class="remove">总价：</span>
+                        <span class="red"><b>￥67.20</b></span>
+                        <div class="jiesuan_box">
+                            去结算
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+   <!-- foot -->
+    <div class="footer">
+        <div class="wrapper"> 
+
+        </div>
+    </div>
+    
+</body>
+</html>

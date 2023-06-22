@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <button>快捷</button>
+    <button>快捷</button>
+    <button>快捷</button>
+    <button>快捷</button>
+    <button>快捷</button>
+</body>
+<script>
+    $(function(){
+        $('button').click(function(){
+            // // 被点击的元素 改变颜色
+            // $(this).css('color','pink');
+            // //  被点击元素的兄弟元素 去除
+            // $(this).siblings().css('color','');
+            
+            // 链式编程  
+            // 我的颜色为粉色 我兄弟的颜色为空 
+            $(this).css('color','pink').siblings().css('color','');
+        })
+    })
+</script>
+</html>

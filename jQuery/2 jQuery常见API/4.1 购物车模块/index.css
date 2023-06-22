@@ -1,0 +1,244 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 1200px;
+}
+a{
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+span{
+    color: #666;
+    font-size: 14px;
+    line-height: 30px;
+}
+ul{
+    list-style: none;
+}
+em{
+    font-style: normal;
+    font-weight: 800;
+}
+
+/* 选中背景颜色 */
+.cart_background{
+    background-color: #fff4e8;
+}
+/* 导航栏 */
+.nav{
+    background-color: #f3f3f3;
+    height: 30px;
+}
+/* 注册 */
+.regi{
+    color: red;
+}
+/* 右侧导航列表 */
+.list{
+    float: right;
+}
+.list li{
+    height: 20px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+    padding: 5px;
+    border-right: 1px solid #666;
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+    line-height: 13px;
+}
+/* 品优购图片 */
+.logo{
+    margin-top: 20px;
+    position: relative;
+}
+/* 购物车 */
+h2{
+    display: inline-block;
+    position: absolute;
+    top:10px;
+    left:350px;
+    color: #666;
+}
+/* 菜单栏 */
+.content .wrapper ul{
+    margin-top:20px;
+}
+.content .wrapper ul li{
+    font-size: 18px;
+    font-weight: 800;
+    color: red;
+}
+/* 菜单栏位置 */
+.content .wrapper .menu{
+    height: 40px;
+    background-color: #f3f3f3;
+    margin-top: 10px;
+}
+.content .wrapper .menu div{
+    float: left;
+    margin-top:8px;
+    color:#666;
+    font-size: 14px;
+    line-height: 25px;
+}
+/* 全选 */
+.content .checkall{
+    margin-left: 15px;
+    margin-top: 5px;
+}
+/* 图书位置 */
+.content .goods{
+    margin-left: 60px;
+}
+/* 价格位置 */
+.content .price{
+    margin-left: 500px;
+}
+/* 数量位置 */
+.content .count{
+    margin-left: 80px;
+}
+/* 小计位置 */
+.content .sub{
+    margin-left: 100px;
+}
+/* 操作位置 */
+.content .oper{
+    margin-left: 80px;
+}
+/* 详细图书 */
+.detail{
+    margin:20px auto;
+}
+/* 图书的大盒子 */
+.box{
+    margin: 15px auto;
+    height: 200px;
+    border: 1px solid #f3f3f3;
+    border-top: 1px solid black;
+    padding: 30px;
+}
+/* 详细信息中的商品 */
+.goodss{
+    border: 1px solid #666;
+    padding: 5px;
+    margin-left: 30px;
+}
+/* 详细信息中的描述 */
+.detail .box .txt{
+    display: inline-block;
+    width: 300px;
+    font-size: 13px;
+}
+/* 详细信息中的价格 */
+.detail .box .prices{
+    text-align: center;
+    margin-left:150px;
+}
+/* 详细信息中的数量 */
+.counts{
+    margin-left: 60px;
+    display: inline-block;
+    width: 80px;
+    height: 22px;
+}
+/* 详细信息中的数量加 */
+.counts .jia{
+    float: left;
+    border: 1px solid #cacbcb;
+    height: 18px;
+    line-height: 18px;
+    padding: 1px 0;
+    width: 16px;
+    text-align: center;
+    color: #666;
+    margin: 0;
+    background: #fff;
+    margin-left: -1px;
+}
+/* 详细信息中的数量减 */
+.counts .jian{
+    float: left;
+    border: 1px solid #cacbcb;
+    height: 18px;
+    line-height: 18px;
+    padding: 1px 0;
+    width: 16px;
+    text-align: center;
+    color: #666;
+    margin: 0;
+    background: #fff;
+    margin-left: -1px;
+}
+/* 详细信息中的数量盒子 */
+.counts .itxt{
+    float: left;
+    border: 1px solid #cacbcb;
+    width: 42px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    padding: 1px;
+    margin: 0;
+    margin-left: -1px;
+    font-size: 12px;
+    font-family: verdana;
+    color: #333;
+    -webkit-appearance: none;
+}
+/* 详细信息中的小计 */
+.detail .box .subs{
+    font-weight: 800;
+    margin-left: 50px;
+}
+/* 详细信息中的操作 */
+.detail .box .opers{
+    margin-left: 55px;
+}
+/* 结算 */
+.charge{
+    height: 50px;
+    background-color: white;
+    margin-top: 10px;
+    border: 1px solid #f3f3f3;
+ 
+    font-size: 13px;
+    line-height: 50px;
+}
+/* 删除购物车 */
+.remove{
+    margin-left: 30px;
+    font-size: 12px;
+}
+.jiesuan{
+    float: right;
+    text-align: center;
+    line-height: 30px;
+}
+.jiesuan_box{
+    display: inline-block;
+    width:100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 18px;
+}
+.red{
+    color:red;
+}
+.footer{
+  
+}
+.footer .wrapper{
+    border: 1px solid pink;
+    height: 800px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <ul>
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+        <li>哈哈哈哈</li>
+    </ul>
+
+    <ol>
+        <li>呵呵呵呵</li>
+        <li>呵呵呵呵</li>
+        <li>呵呵呵呵</li>
+        <li>呵呵呵呵</li>
+    </ol>
+    
+    <script>
+        // 将ul第一个li 字体颜色变成粉色
+        $("ul li:first").css('color','pink');
+        // 将ul第三个Li变成紫色
+        $('ul li:eq(2)').css('color','purple');
+        // 将ul最后一个li 字体颜色变成黄色
+        $("ul li:last").css('color','yellow');
+        // 将ol中奇数的li 字体颜色变成红色
+        $('ol li:odd').css('color','red');
+        // 将ol中偶数的li 字体颜色变成蓝色
+        $('ol li:even').css('color','blue'); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        ul{
+            float: left;
+            list-style: none;
+            width: 60px;
+            height: 300px;
+        }
+        ul li{
+            height: 33px;
+            border: 1px solid pink;
+            text-align: center;
+            line-height: 30px;
+        }
+        .main{
+            margin-top: 200px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+        .pic div{
+            float: left;
+
+        }
+        .pic div{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <ul>
+            <li><a href="#">女靴</a></li>
+            <li><a href="#">雪地靴</a></li>
+            <li><a href="#">冬裙</a></li>
+            <li><a href="#">呢大衣</a></li>
+            <li><a href="#">毛衣</a></li>
+            <li><a href="#">棉服</a></li>
+            <li><a href="#">女裤</a></li>
+            <li><a href="#">羽绒裤</a></li>
+            <li><a href="#">牛仔裤</a></li>
+        </ul>
+
+        <div class="pic">
+                <div>
+                        <a href="#"><img src="./image/女靴.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/雪地靴.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/冬裙.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/呢大衣.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/毛衣.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/棉服.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/女裤.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/羽绒服.jpg"></a>
+                </div>
+                <div>
+                        <a href="#"><img src="./image/牛仔裤.jpg"></a>
+                </div>
+        </div>
+    </div>
+    
+    <script>
+        $(function(){
+            $('ul li').mouseover(function(){
+                // 将鼠标经过的li的索引进行存储
+                let index  = $(this).index();
+                // console.log(index);
+                // 将点击的索引与照片进行匹配  点击的Li显示出来 
+                $('.pic div').eq(index).show();
+                // 被点击之外其他兄弟 隐藏（一定要写完 才可以有效果）
+                $('.pic div').eq(index).siblings().hide();
+
+                // 运用链式编程
+                // $('.pic div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+</html> 

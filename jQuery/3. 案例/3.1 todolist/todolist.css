@@ -1,0 +1,85 @@
+ *{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    display: inline-block;
+    color: white;
+}
+ul,ol{
+    list-style: none;
+}
+.wrapper{
+    width: 600px;
+    line-height: 60px;
+}
+.head{
+    height: 60px;
+    background-color: black;
+}
+.todo_txt{
+    float: right;
+    margin-top: 15px;
+    padding: 5px;
+    width: 350px;
+    height: 30px;
+    border-radius: 5px;
+}
+.body{
+    background-color: pink;
+    height:700px;
+}
+h2 {
+    position: relative;
+}
+span {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    display: inline-block;
+    padding: 0 5px;
+    height: 20px;
+    border-radius: 20px;
+    background: #E6E6FA;
+    line-height: 22px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+.doing_thing,
+.done_thing{
+    margin-top: 20px;
+}
+ol li {
+    cursor: move;
+}
+
+ul li {
+    border-left: 5px solid #999;
+    opacity: 0.5;
+}
+
+li a {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    border-radius: 14px;
+    border: 6px double #FFF;
+    background: #CCC;
+    line-height: 14px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+footer{
+
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}

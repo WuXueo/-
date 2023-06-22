@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        .grandfather{
+            width:300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+
+        <ul>
+            <li>你</li>
+            <li>我</li>
+            <li>他</li>
+        </ul>
+    </div>
+    
+    <div>
+        <ul>
+            <li>我是li</li>
+            <li>我是li</li>
+            <li class="current">我是li</li>
+            <li>我是li</li>
+            <li>我是li</li>
+        </ul>
+    </div>
+
+    <div>
+        <ol>
+            <li>我是li</li>
+            <li>我是li</li>
+            <li class="lis">我是li</li>
+            <li>我是li</li> 
+            <li>我是li</li>
+        </ol>
+    </div>
+
+    <div>
+        我没有类
+    </div>
+    
+    <div class="box">
+        我有box类
+    </div>
+
+    <ol class="ha">
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ol>
+
+    <script>
+        // 寻找父级 将父级选择器背景颜色改变为粉色
+        $('.son').parent().css('background','pink');
+        // 将最近一级 查找出来
+        $('ul').children('li').css('color','pink');
+        // 查所有的子孙
+        $('.grandfather').find('div').css('background','purple');
+
+        // 查找兄弟节点
+        $(".current").siblings('li').css('color','pink');
+
+        // 查找之前元素
+        $('.lis').prevAll().css('color','red');
+
+        // 查找之后元素
+        $('.lis').nextAll().css('color','blue');
+
+        // 查找元素是否有特定的类 (注意这里查找类 不加.)
+        console.log($("div:first").hasClass('box'));
+        console.log($('div:last').hasClass('box'));
+
+        // 老方法 查找ol里面的第四个li
+        $('.ha li:eq(3)').css('color','red');
+        // 查找ol里的第三个li  这里可以直接使用变量
+        let index = 2
+        // $('.ha li').eq(index).css('color','pink');
+        $('.ha li').eq(2).css('color','purple');
+        // $(".ha li:eq("+index+")").css('color','blue');
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            display: block;
+        }
+        .content{
+            margin-top: 100px;
+            padding: 5px;
+            width: 852px;
+            height: 80px;
+            background-image: url(./image/bg.png);
+            overflow: hidden;
+        }
+        .content ul{
+            overflow: hidden;
+        }
+        .content ul li{
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 69px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .content .big{
+            display: none;
+            width: 224px;
+        }
+        .content .small{
+            position: absolute;
+            top:0;
+            left:0px;
+            height: 70px;   
+            width: 70px;
+        }
+        /* .current{
+            display: block;
+            width: 224px;
+        } */
+        .current .small{
+            display: none;
+        }
+        .current .big{
+            display: block;
+            width: 224px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="./image/c1.jpg" class="small">
+                    <img src="./image/c.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/h1.jpg" class="small">
+                    <img src="./image/h.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/l1.jpg" class="small">
+                    <img src="./image/l.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/m1.jpg" class="small">
+                    <img src="./image/m.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/t1.jpg" class="small">
+                    <img src="./image/t.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/w1.jpg" class="small">
+                    <img src="./image/w.png" class="big">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./image/z1.jpg" class="small">
+                    <img src="./image/z.png" class="big">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(function(){
+            // 鼠标点击li 就会显示大图就会淡入 小图淡出
+            $('.content li').mouseover(function(){
+                $(this).stop().animate({
+                    width:224
+                    // 点击的子类 找到大图片 让大图片淡入 找到大图片 大图片的兄弟 淡出
+                }).find('.big').stop().fadeIn().siblings('.small').stop().fadeOut();
+            })
+            // 鼠标移开之后 小图淡入 大图淡出
+            $('.content li').mouseout(function(){
+                $(this).stop().animate({
+                    width:69
+                    // 点击的子类 找到小图片 让小图片淡入 小图片的兄弟 淡出
+                }).find('.small').stop().fadeIn().siblings('.big').stop().fadeOut();
+            })
+        })
+    </script>
+</body>
+</html>

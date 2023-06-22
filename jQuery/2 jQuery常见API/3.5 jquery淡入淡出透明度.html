@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>淡出淡出效果</button>
+    <button>透明度</button>
+    <div></div>
+
+    <script>
+        $(function(){
+            // 点击第一个按钮时 盒子淡入
+            $('button').eq(0).click(function(){
+                $('div').fadeIn(200);
+            })
+            // 点击第二个按钮 盒子淡出
+            $('button').eq(1).click(function(){
+                $('div').fadeOut(200);
+            }) 
+            // 点击第三个按钮时 盒子淡入淡出
+            $('button').eq(2).click(function(){
+                $('div').fadeToggle(200);
+            })
+            // 点击第四个按钮时 盒子透明度变化为0.5
+            $('button').eq(3).click(function(){
+                // fadeTo 函数里 必须要写速度和透明度
+                $('div').fadeTo(200,0.5);
+            })
+        })
+    </script>
+</body>
+</html>

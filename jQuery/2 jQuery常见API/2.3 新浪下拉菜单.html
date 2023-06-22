@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            margin-top: 100px;
+            width:600px;
+            height: 100px;
+    
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+        .nav .weibo{
+            position: relative;
+            float:left;
+            text-align: center;
+            width: 130px;
+            height: 100px;
+        }
+        .uls{
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .uls li{
+            width: 75px;
+            height: 40px;
+            border:1px solid rgb(248, 164, 29);
+            text-align: center;
+            line-height: 35px;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li class="weibo">
+            <a>微博</a>
+            <ul class= 'uls'>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="weibo">
+            <a>微博</a>
+            <ul class= 'uls'>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="weibo">
+            <a>微博</a>
+            <ul class= 'uls'>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li class="weibo">
+            <a>微博</a>
+            <ul class= 'uls'>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        // 老方法
+        // $(function(){
+        //     // 当鼠标在微博上时 下面的ul会显示出来  show()获取元素 hide()隐藏元素
+        //     $('.weibo').mouseover(function(){
+        //         // 一定要获取当前鼠标所指的元素$(this) 注意这里没有引号
+        //         $(this).children('.uls').show();
+        //     })
+
+        //     // 当鼠标离开时 ul也会隐藏
+        //     $('.weibo').mouseout(function(){
+        //         // 同理 鼠标所获取的li要进行隐藏
+        //         $(this).children('.uls').hide();
+        //     })
+        // })
+
+        // 新方法
+            $(function(){
+                // // 鼠标经过 下拉菜单
+                // $('.weibo').mouseover(function(){
+                //     $(this).children('.uls').stop().slideDown();
+                // })
+                // // 鼠标离开 上拉菜单
+                // $('.weibo').mouseout(function(){
+                //     $(this).children('.uls').stop().slideUp();
+                // })
+
+                // 事件切换
+                // hover 内部有两个函数
+                // $('.weibo').hover(function(){
+                //     // 下拉菜单
+                //     $(this).children('.uls').stop().slideDown();
+                // },function(){
+                //     // 上拉菜单
+                //     $(this).children('.uls').stop().slideUp();
+                // })
+
+                // 事件切换
+                // hover里面只有一个函数 那么鼠标经过离开都能触发这个函数
+                $('.weibo').hover(function(){
+                    $(this).children('.uls').stop().slideToggle(100);
+                })
+            })
+
+    </script>
+</body>
+</html>

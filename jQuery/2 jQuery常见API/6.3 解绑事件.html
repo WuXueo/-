@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        div{
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+        <li>我是li</li>
+    </ul>
+    <p>只触发一次的事件</p>
+    <script>
+        // 绑定事件
+        $('div').on({
+            'click':function(){
+                console.log('我被点击了');
+            },
+            'mouseover':function(){
+                console.log('经过我了');
+            }
+        })
+        // 把所有事件全部解绑
+        // $('div').off();
+        // 只解绑点击事件
+        $('div').off('click');
+        // 绑定委托事件
+        $('ul').on('click','li',function(){
+            alert('li被点击了');
+        })
+        // 解绑委托事件
+        $('ul').off('click','li');
+        // 只触发一次事件
+        $('p').one('click',function(){
+            alert('只能触发一次哦');
+        })
+    </script>
+</body>
+</html>

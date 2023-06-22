@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+<script>
+    // 声明一个颜色数组
+    let arr = ['red','pink','green'];
+    // 声明一个总数
+    let sum = 0;
+    // 遍历div元素 each方法有两个参数 第一个是索引 第二个是元素
+    $('div').each(function(i,domEle){
+        // 获取dom元素 但dom是js的 要转换为jquery
+        // 注意数组要写索引
+        $(domEle).css('color',arr[i]);
+        // 将div三个数值加起来
+        sum = sum + parseInt($(domEle).text());
+    })
+    console.log(sum);
+// 主要用于数据处理
+    $.each(arr,function(i,ele)
+    {
+        console.log(i);
+        console.log(ele);
+    })
+    $.each({
+        name:'andy',
+        age:18
+    },function(i,domEle){
+        console.log(i);     //属性名 name age
+        console.log(domEle);        //属性值 andy 18
+    })
+</script>
+</html>

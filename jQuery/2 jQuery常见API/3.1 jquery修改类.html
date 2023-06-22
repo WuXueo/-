@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.mini.js"></script>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            /* 过渡属性 和旋转一起用*/
+            transition:all 0.5s;
+        } 
+        .current{
+            background-color: pink;
+            /* 旋转三百六十度 */
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    $(function(){
+        // 添加类 类名不加点
+        // $('div').click(function(){
+        //     $(this).addClass('current');
+        // })
+        
+        // 删除类
+        // $('div').click(function(){
+        //     $(this).removeClass('current');
+        // })
+
+        // 切换类
+        $('div').click(function(){
+            $(this).toggleClass('current');
+        })
+    })
+</script>
+</html>
