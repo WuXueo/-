@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'time'>2019-9-9</div>
+    <li>知否知否，应是1</li>
+    <li>知否知否，应是2</li>
+    <li>知否知否，应是</li>
+    <li>知否知否，应是</li>
+    <li>知否知否，应是</li>
+    <li>知否知否，应是</li>
+
+    <ol id = 'ol'>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+        <li>生僻字</li>
+    </ol>
+
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div id="nav">
+        <ul>
+        <li>首页</li>
+        <li>产品</li>
+        </ul>
+    </div>
+
+    <script>
+        // 通过id进行获取
+        timer = document.getElementById('time');
+        console.log(timer);
+        //通过标签进行获取
+        lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+        // 通过父级进行获取    获取ol里面的li
+        /* var ol = document.getElementByTagName('ol');
+        console.log(ol[0].getElementsByTagName('li')); */     //只能获取一个元素
+
+        /* var ol = document.getElementById('ol');            //先获取ol父级
+        console.log(ol.getElementsByTagName('li')); */        //在进行获取ol中的li
+
+        // 通过类名进行获取         
+        var box = document.getElementsByClassName('box');     //返回全部box
+        console.log(box);
+
+        var firstbox = document.querySelector('.box');         //返回第一个box类
+        console.log(firstbox);
+
+        var nav = document.querySelector('#nav');              //返回第一个id为nav
+        console.log(nav);
+
+        var li = document.querySelector('li');                 //返回第一个标签为li的
+        console.log(li);
+
+        var allBox = document.querySelectorAll('.box');
+        console.log(allBox);
+
+        var allli = document.querySelectorAll('li');
+        console.log(allli);
+
+
+    </script>
+</body>
+</html>

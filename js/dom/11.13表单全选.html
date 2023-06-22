@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        margin: 200px auto;
+        width: 300px;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: center; 
+    }
+    thead tr{
+        background-color: skyblue;
+    }
+    thead td{
+        border: 1px solid gray;
+    }
+    tbody tr{
+        height: 30px;
+    }
+
+    tbody td{
+        border: 1px solid gray;
+    }
+
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td><input type="checkbox" id = 'th_box'></td>
+                <td>商品</td>
+                <td>价钱</td>
+            </tr>
+        </thead>
+        <tbody id = 'tb_box'>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>IPhone13</td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>IPhone13</td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>IPhone13</td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>IPhone13</td>
+                <td>7000</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        // 获取元素 th是表头的checkbox  tds是表格中的checkbox
+        var th = document.getElementById('th_box');
+        var tds = document.getElementById('tb_box').getElementsByTagName('input');
+        // 要让表头的checkbox选中 所有表格的checkbox就会选中  所以要把表头的checked状态赋值给表格中的每一个checkbox
+        th.onclick = function(){
+            for(var i = 0 ;i < tds.length;i++){
+                tds[i].checked = this.checked; 
+        }
+    }
+    // 用for来遍历每一个表格中的checkbox 用表格中的每一个checkbox的点击来进行判断 如果每一个表格中flag状态都为true 所以就可以全选 让表头的checkbox的flag直接等于true反之一样的道理
+        for(var i = 0;i < tds.length;i ++){
+            tds[i].onclick = function(){
+                // 通过flag来进行判断checkbox
+                var flag = true;
+                // 用来检查四个按钮是否被选中
+                for(var i = 0; i < tds.length;i++){
+                    if(!tds[i].checked){
+                        flag = flase;
+                        // 只要有一个flase就不用继续循环
+                        break;
+                    }   
+            }
+            th.checked = flag;
+            }
+        }
+    </script>
+</body>
+</html>

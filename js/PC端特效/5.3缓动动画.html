@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            left:0;
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn500">点一下到500</button>
+    <button class='btn800'>点一下到800</button>
+    <div class="box">夏雨荷</div>
+    
+    <script>
+        // 封装一个动画函数
+        function animate(obj,target,callback){
+             // 先进行清除定时器 以免重复有很多定时器开启
+            clearInterval(obj.timer);
+            // 运用对象属性 以免浪费存储空间
+            obj.timer = setInterval(function(){
+                // 由于到达的像素有小数 不是很准确 所以要将步长进行取整（向上取整 Math.ceil  向下取整 Math.floor）
+                // let step = Math.ceil((target - obj.offsetLeft ) /10);
+                let step = (target - obj.offsetLeft ) /10;
+                // 正数就往大了取 负数就往小了取 这样才没有误差
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                // 当对象运动到达目的地 停止运动 进行清除定时器
+                if( obj.offsetLeft == target){
+                    clearInterval(obj.timer);
+                 // 结束定时器之后 立即执行回调函数 回调函数写在定时器结束里面
+                    if(callback){
+                        callback();
+                    }
+                }
+                    obj.style.left = obj.offsetLeft + step + 'px';
+            },30)
+        }
+
+        let box = document.querySelector('.box');
+        let btn500 = document.querySelector('.btn500'); 
+        let btn800 = document.querySelector('.btn800');
+        btn500.addEventListener('click',function(){
+            animate(box,500);
+        })
+        btn800.addEventListener('click',function(){
+            // 添加了一个回调函数
+            animate(box,800,function(){
+                box.style.backgroundColor = 'red' ; 
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 松开键盘
+        document.addEventListener('keyup',function(){
+            console.log('松开啦！');
+        })
+        // 按下键盘     
+        document.addEventListener('keydown',function(){
+            console.log('按下了！');
+        })
+        // 按下键盘   不能识别ctrl和shift和左右箭头
+        document.addEventListener('keypress',function(){
+            console.log('被按下了！');
+        })
+
+        // 执行顺序  keydown -> keypress -> keyup
+    </script>
+</body>
+</html>

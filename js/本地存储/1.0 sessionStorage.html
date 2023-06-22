@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="ipt">
+    <button class="set">存储数据</button>
+    <button class="get">获取数据</button>
+    <button class="remove">删除数据</button>
+    <button class="clear">清除数据</button>
+    
+    <script>
+        console.log(localStorage.getItem('username'));
+        // 获取元素
+        ipt = document.querySelector('.ipt');
+        set = document.querySelector('.set');
+        get = document.querySelector('.get');
+        remove = document.querySelector('.remove');
+        clear = document.querySelector('.clear');
+
+        // 存储数据
+        set.addEventListener('click',function(){
+            // 设置输入的值 
+            let value = ipt.value;  
+            sessionStorage.setItem('psw',value);
+            sessionStorage.setItem('username',value);
+        })
+        
+        // 获取数据
+        get.addEventListener('click',function(){
+            console.log(sessionStorage.getItem('username'));
+        })
+
+        // 清除数据
+        remove.addEventListener('click',function(){
+            sessionStorage.removeItem('username');
+        })
+        
+        // 清空数据
+        clear.addEventListener('click',function(){
+            sessionStorage.clear();
+        })
+        
+    </script>
+</body>
+</html>

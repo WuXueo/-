@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // 获取文本框
+        let input = document.querySelector('input');
+        // 注册事件  键盘事件 
+        document.addEventListener('keyup',function(e){
+            // 如果按下s键就会输入 s的ASCII码是83
+            // console.log(keyCode);  可通过此代码来看ASCII
+            if( e.keyCode === 83){
+                // 搜索框获得焦点
+                input.focus();
+            }
+        }) 
+
+    </script>
+</body>
+</html>

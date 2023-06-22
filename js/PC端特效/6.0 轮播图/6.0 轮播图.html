@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .wrapper{
+            position: relative;
+            margin: 50px auto;
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+        }
+        ul{
+            list-style: none;
+        }
+        .prev, 
+        .next{
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: grey;
+            opacity: 30%;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            color: white;
+            cursor: pointer;
+            z-index: 2;
+        }
+         .prev{
+            position: absolute;
+            top: 150px;
+            left:0;
+        }
+
+         .next{
+            position: absolute;
+            top:150px;
+            right: 0;
+        }
+        .pic{
+            position: absolute;
+            top:0;
+            left:0;
+            width:600%;
+        }
+        .pic li{
+            float: left;
+        }
+        .pic li img{
+            width: 600px;
+        }
+        .circle{
+            position: absolute;
+            top: 265px;
+            left: 250px;
+            list-style: none;
+            cursor: pointer;
+            display: block;
+        }
+        .circle li{
+            margin-right: 10px;
+            float:left;
+            background-color:rgba(255, 255, 255,0.4);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px; 
+        }
+        ol .current{
+            background-color: rgb(255, 219, 152);
+            opacity: 50%;
+        }
+
+    </style>
+    <script src="../5.3 animate.js"></script>
+    <script src="./my.js"></script>
+</head>
+<body>
+    <!-- 图片框 -->
+    <div class="wrapper">
+        <!-- 向前 -->
+        <a class="prev"></a>
+        <!-- 向后 -->
+        <a class="next">></a>
+        <!-- 插入轮播图片 -->
+        <ul class="pic"> 
+            <li><a href="#"><img src="../img/横屏.jpg"></a></li>
+            <li><a href="#"><img src="../img/横屏2.jpeg" ></a></li>
+            <li><a href="#"><img src="../img/横屏3.jpg"></a></li>
+        </ul>
+        <!-- 下方小圆点 -->
+        <ol class="circle">
+           
+        </ol>
+    </div>
+    
+</body>
+</html>

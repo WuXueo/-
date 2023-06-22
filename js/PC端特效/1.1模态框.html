@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            display: block;
+            
+            height: 50px;
+            text-align: center;
+            text-decoration: none;
+            color:black;
+        }
+        
+        h3{
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        input{
+            margin: 20px 5px;
+            border: 1px solid #ebebeb;
+            width: 280px;
+            height: 30px;
+
+        }
+
+        .text{
+            margin-left: 40px;
+    
+        }
+
+        .user{
+            margin-left: 13px;
+          
+        }
+
+        .btn{
+            margin: 0 150px;
+            width: 145px;
+            height: 40px;
+            background-color: #fff;
+            border: 1px solid #ebebeb;
+        }
+        /* 遮盖层样式 */
+        .login-bg{ 
+            display: none;
+            width: 100%;
+            height: 100%;
+            position:fixed;
+            top: 0px;
+            left: 0px;
+            background: rgba(0, 0, 0, .3);
+            z-index: 0;
+        }
+
+        .res{
+            display: none;
+             /* 居中 */
+            position:fixed;
+            left: 50%;
+            top: 50%;
+            border: 1px solid #ebebeb;
+            width: 450px; 
+            height: 250px;
+            /* 边框阴影 */
+            box-shadow: 0px 0px 20px #ddd;
+            background-color: white;
+            
+            transform: translate(-50%,-50%);
+       
+        }
+
+        .close{
+            position: absolute;
+            top:-20px;
+            right: -20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #ebebeb;
+
+        }
+
+        .close a{
+            display: block;
+            position:absolute;
+            top:10px;
+            left: 6px;
+        }
+
+        .res .title{
+            cursor: move;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    <a href="#" class="theme"><h1>点击进行登录</h1></a>
+
+    <!-- 遮盖层 -->
+    <div class="login-bg"></div>
+
+    <div class="res">
+        <div class="title">
+            <h3 >登录会员</h3>
+        </div>
+        <div class="text">
+            <div class="user">用户名：<input type="text" placeholder="请输入用户名"> </br></div>
+            登录密码：<input type="password" placeholder="请输入登录密码">
+        </div>
+       <button class="btn">登录会员</button>
+       <div class="close"><a href="javascript:;">关闭</a></div> 
+    </div>
+    
+     <script>
+        let login = document.querySelector('.theme');
+        let box = document.querySelector('.res');
+        let hide = document.querySelector('.login-bg'); 
+        let close = document.querySelector('.close');
+        let title = document.querySelector('.title');
+
+        login.addEventListener('click',function(){
+            box.style.display = 'block';
+            hide.style.display = 'block';   
+        })
+
+        title.addEventListener('mousedown',function(e){
+            // 获取鼠标在动态框中的位置   用鼠标在页面中的位置减去盒子的坐标就是鼠标在盒子中的坐标
+                let x = e.pageX - box.offsetLeft;
+                let y = e.pageY - box.offsetTop;
+
+                function move(e){
+                    // 鼠标在网页中的坐标减去鼠标在盒子中的坐标就是动态框的坐标
+                    box.style.left = e.pageX - x + 'px';
+                    box.style.top = e.pageY - y + 'px';
+                    }
+
+                document.addEventListener('mousemove',move)
+                document.addEventListener('mouseup',function(){
+                    document.removeEventListener('mousemove',move);
+                })
+            })
+
+                close.addEventListener('click',function(){
+                    box.style.display = 'none';
+                    hide.style.display = 'none';
+        })
+   
+        
+     </script>
+</body>
+</html>

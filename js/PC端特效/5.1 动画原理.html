@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* 一定要给盒子加一个绝对定位 不然走不了 */
+        .box{
+            position:absolute;
+            left: 0;
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector('.box');
+        // 设置一个定时器
+        let timer = setInterval(function(){
+            // 获取盒子左边距离要用 setoffleft 
+            if ( box.offsetLeft == 300){
+                // 停止定时器 timer
+                clearInterval(timer);
+            }
+            else{
+                // 在原来的位置加5像素 赋值给盒子样式左部坐标
+            box.style.left = box.offsetLeft + 5 +'px';}
+        },30);
+    </script>
+</body>
+</html>

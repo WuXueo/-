@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        .head{
+            width:960px;
+            height: 300px;
+            background-color: rgb(59, 222, 255);
+        }
+        .banner{
+            width:960px;
+            height: 500px;
+            background-color: pink;
+        }
+        .footer{
+            width:960px;
+            height: 800px;
+            background-color: rgb(253, 253, 180);
+        }
+        .cebian{
+            position: absolute;
+            top:400px;
+            right:190px;
+            width: 65px;
+            height: 150px;
+            background-color: aqua;
+        }
+        .dingbu{
+            display: none;
+        }
+    </style>
+    <script src="./huandong.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="head">head</div>
+        <div class="banner">banner
+            <div class="cebian">
+                <span class="dingbu">返回顶部</span>
+            </div>
+        </div>
+        <div class="footer">footer</div>
+       
+    </div>
+    <script>
+        let head = document.querySelector('.head');
+        // 将头部卷入定义一个值
+        let head_top = head.offsetTop;
+        let cebian = document.querySelector('.cebian');
+        // 滚动到脚步的距离
+        let banner = document.querySelector('.banner');
+        let banner_top = banner.offsetTop; 
+        let dingbu = document.querySelector('.dingbu');
+        // 绑定滚轮事件 当页面卷入的头部大于头部卷入的部分 就使侧边导航位置固定 
+        document.addEventListener('scroll',function(){
+            if(window.pageYOffset > head_top){
+                cebian.style.position = 'fixed';
+            }
+            else{
+                cebian.style.position = 'absolute';
+            }
+        })
+        // 当滚动的距离 大于 到脚部的距离 就应该显示顶部
+        document.addEventListener('scroll',function(){
+            if(window.pageYOffset > banner_top ){
+                dingbu.style.display = 'block';
+            }
+            else{
+                dingbu.style.display = 'none';
+            }
+        })
+
+        // 返回顶部
+        dingbu.addEventListener('click',function(){
+            // 对象是针对网页窗口 target是0
+            animate(window,0);
+        }) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 获取元素
+        let box = document.querySelector('.box');
+        // 定义盒子的初始坐标
+        let box_X = 0; 
+        let box_Y = 0;
+        // 定义手指初始坐标
+        let start_X = 0;
+        let start_Y = 0;
+        // 当手指开始触摸时 获取手指在屏幕中的坐标
+        box.addEventListener('touchstart',function(e){
+            start_X = e.targetTouches[0].pageX;
+            start_Y = e.targetTouches[0].pageY;
+            // 盒子的坐标要重新进行计算
+            box_X = this.offsetLeft;
+            box_Y = this.offsetTop;
+        })
+        // 移动结束后 盒子的距离是手指移动触摸的位置-手指开始触摸的位置 + 盒子原始位置
+        box.addEventListener('touchmove',function(e){
+            // 手指移动的距离
+            let move_X = e.targetTouches[0].pageX - start_X;
+            let move_Y = e.targetTouches[0].pageY - start_Y;
+            // 盒子的距离 (原始盒子的距离+手指移动的距离) 注意一定要加单位
+            this.style.left = box_X + move_X +'px';
+            this.style.top = box_Y + move_Y + 'px';
+            // 阻止屏幕滚动的默认行为  防止盒子移动随着屏幕滚动
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 做动画时 一定要加绝对定位 */
+            position: absolute;
+            left:0;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+        }
+        span{
+            display: block;
+            position: absolute;
+            left:0;
+            margin-top: 50px;
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <button>点击一下夏雨荷才走</button>
+    <div class="box"></div>
+    <span>夏雨荷</span>
+    <script>
+        // 将动画封装成一个函数 要传两个参数 一个是对象，一个是目标像素（到达多大时停止）
+        function animate(obj,target){
+            // 有定时器 先进行清除
+            clearInterval(obj.timer);
+            // 如果有多个对象需要定时器 就得开辟多个定时器 浪费内存空间
+            // 解决方法 不必每次声明一次 改成文档对象模型中函数写法
+            obj.timer = setInterval(function(){
+                
+            if(obj.offsetLeft >= target){
+                clearInterval(obj.timer);
+            }
+            else{
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }
+        },30);
+        }
+
+        let btn = document.querySelector('button');
+        let box = document.querySelector('.box');
+        let span = document.querySelector('span');
+        animate(box,300);
+        // 但如果不加定时器 每次点击按钮 夏雨荷盒子就会越走越快 因为有多个定时器开启
+        // 最后会超出限定长度 这时应该给他加一个清除定时器 就不会干扰
+        btn.addEventListener('click',function(){
+            animate(span,500);
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        li{
+            list-style-type: none;
+        }
+
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+        }
+    
+        div ul li{
+            float: left;
+            width: 24px;
+            height: 24px;
+            margin-right: 40px; 
+            margin-top: 10px;
+            background-image: url(./img/sprite.png);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        var pic = document.querySelectorAll('li');
+        for(var i = 0;i < pic.length;i++){
+            var index = 44*i;
+            pic[i].style.backgroundPosition = '0 -' + index +'px';
+        }
+
+    </script>
+
+</body>
+</html>

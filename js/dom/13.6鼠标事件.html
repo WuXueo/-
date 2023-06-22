@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 必须要给图片top */
+        img{
+            position: absolute;
+            top:2px;
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/angel.gif">
+    <script>
+        // 获取图片元素
+        let pic = document.querySelector('img');
+        // 注册事件 鼠标移动
+        document.addEventListener('mousemove',function(e){
+            // 获取鼠标移动时的坐标
+            let x = e.pageX;
+            let y = e.pageY;
+            // 将获取到的位置赋值给图片
+            pic.style.left = x -50 +'px';
+            pic.style.top = y -40 +'px';
+        })
+
+        
+    </script>
+</body>
+</html>

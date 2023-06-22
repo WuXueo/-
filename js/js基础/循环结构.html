@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1-100累加
+        /* var sum = 0;
+        for(var num = 1;num <= 100;num++)
+        {
+            sum = num+sum;
+        }
+        alert("1-100所有的整数累加和为 "+ sum );
+ */
+
+        // 求学生成绩
+        /* var num = prompt('请输入班级人数');
+        var sum = 0;
+        var ave = 0;
+        for(var i = 1; i <= num; i++)
+        {
+            var score = prompt("请输入第" + i + "个学生的成绩");
+            sum = sum + parseFloat(score);
+        }
+        ave = sum / (i-1);
+        console.log('该班级总成绩为'+sum +'分');
+        console.log('该班级平均成绩为'+ ave +'分'); */
+
+        // 打印星星
+       /*  var str = ' ';
+        for(var i = 1;i <= 5 ;i++)
+        {
+            str = str +'⭐';
+        }
+        alert(str); */
+
+        //双重循环
+          /* var str ='';
+        for(i = 1; i <= 5;i ++)
+        {
+            for(j = 1;j <= 5;j++)
+            {
+                str = str + '⭐';
+            }
+            str = str + '\n';
+        } 
+        console.log(str); */
+
+    //   正三角形
+    /* var str = '';
+    for(var i = 1; i <= 10;i++)
+    {
+        for (var j = 1; i >= j;j ++)
+        {
+            str = str +' ⭐';
+        }
+        str = str + '\n';
+    }
+    console.log(str); */
+    
+    // 九九乘法表
+   /*  var str = '';
+    for(var i = 1 ; i <=9; i++)
+    {
+        for(var j = i ;i <=j;j++)
+        {
+            str += j +'*'+ i +'='+ i*j ;
+        }
+        str += '\n';
+    }
+    console.log(str); */
+
+    //你爱我吗？
+    var str = '我爱你';
+    var str_1 = prompt('你爱我吗？');
+    while( 1)
+    {
+        if (str == str_1){
+        alert('结束！');break;}
+        else
+        {
+            var str_1 = prompt('你爱我吗？');
+        }
+
+    }
+
+        
+
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

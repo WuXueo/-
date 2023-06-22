@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+
+        body{
+            margin: 0 auto;
+            width: 1000px;
+            background-image: url(./img/1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        img{
+            margin:250px auto;
+            width: 200px;
+            border:2px solid white;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+    <div class="box">
+        <img src="./img/1.jpg">
+        <img src="./img/2.jpg">
+        <img src="./img/3.jpg">
+        <img src="./img/4.jpg">
+    </div>
+
+    <script>
+        // 获取元素
+        var background = document.getElementsByTagName('img');
+        var body = document.querySelector('body');
+        // 循环注册事件
+        for(var i = 0; i < background.length ; i++){
+            background[i].onclick = function(){
+                // this.src 点击当前图片的路径 之后再给body
+                body.style.backgroundImage = 'url('+this.src+')';
+            }
+          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: pink;
+        }
+        .box{
+            position: relative;
+            margin:100px auto;
+            width: 700px;
+            height: 40px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        ul{
+            /* 这里加absolute是因为 标准流的关系 不加可能会造成筋斗云遮挡文字 */
+            position: absolute;
+            list-style: none;
+            margin: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        ul li{
+            float: left;
+            margin-right: 15px;
+            font: 20px; 
+        }
+        a{
+            text-decoration: none;
+         
+        }
+        .cloud{
+            width: 83px;
+            height: 42px;
+            background:url(./img/cloud.gif);
+            /* 这里加了absolute是因为要进行动画 必须要加绝对定位 */
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        img{
+            position: absolute;
+            right: 7px;
+            top: 4px;
+        }
+    </style>
+    <script src="./5.3 animate.js"></script>
+    <script>
+        window.addEventListener('load',function(){
+            let current = 0;
+            let cloud = document.querySelector('.cloud');
+            let lis  =document.querySelectorAll('li');
+            
+            for(let i = 0;i < lis.length; i++){
+                // 给lis[i] 绑定事件 
+                lis[i].addEventListener('mouseenter',function(){
+                    // 鼠标移动到小li时 云朵开始运动
+                    animate(cloud,this.offsetLeft);
+                })
+                //  鼠标离开 云朵放在原先的位置
+                lis[i].addEventListener('mouseleave',function(){
+                    animate(cloud,current);
+                })
+                // 如果点击lis[i]时 云朵开始固定
+                lis[i].addEventListener('click',function(){
+                    // 当前位置就是当前Li的offsetLeft
+                    current = this.offsetLeft;
+                })
+            }
+        })
+    </script>
+</head>
+<body>  
+    <div class="box"><img src="./img/rss.png">
+        <span class="cloud"></span>
+        <ul>
+            <li><a href="#">首页新闻</a></li>
+            <li><a href="#">师资力量</a></li>
+            <li><a href="#">活动策划</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">招聘信息</a></li>
+            <li><a href="#">公司简介</a></li>
+            <li><a href="#">我是佩奇</a></li>
+            <li><a href="#">啥是佩奇</a></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>12</div>
+    <ul>
+        <li>123456</li>
+        <a href="#">百度</a>
+    </ul>
+    <script>
+        let div = document.querySelector('div');
+        // 传统的事件对象
+        // div.onclick = function(event){
+        //     alert('123');
+        //     console.log(event);
+        // }
+
+        // // 监听事件对象
+        // div.addEventListener('click',function(event){
+        //     console.log(event);
+        //     // e.target返回的是触发事件的对象
+        //     // this返回的是绑定事件的对象
+        //     console.log(event.target);
+        // })
+
+        // let ul = document.querySelector('ul');
+        // ul.addEventListener('click',function(e){
+        //     // this是指绑定事件的对象ul
+        //     // e.target是指触发事件的对象li  点的谁就是谁
+        //     console.log(this);
+        //     console.log(e.target);
+        // })
+
+        // 事件类型 e.type
+        div.addEventListener('click',fn);
+        div.addEventListener('mouseover',fn);
+        div.addEventListener('mouseout',fn);
+        function fn(e){
+            console.log(e.type);
+        }
+
+        // 阻止默认行为  让链接不跳转
+        let a = document.querySelector('a');
+        // 监听方法阻止默认行为
+        a.addEventListener('click',fn);
+        function fn(e){
+            // 阻止默认行为 不跳转
+            e.preventDefault();
+        }
+        // 传统方法阻止
+        // a.onclick = function(e){
+        //     e.preventDefault();
+        // }
+    </script>
+</body>
+</html>

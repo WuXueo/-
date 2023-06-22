@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        textarea{
+            margin-top: 150px;
+            margin-left: 150px;
+            width: 200px;
+            height: 200px;
+        }
+
+        button{
+            position:absolute;
+            top:328px;
+            left: 350px;
+        }
+        
+        ul{
+            margin-top: 30px;
+            margin-left: 150px;
+            width: 200px;
+            background-color: pink;
+        }
+
+        a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id=""></textarea>
+    <button>留言</button>
+    <ul>
+        
+    </ul>
+    <script>
+        // 获取元素   文本框 按钮 ul列表
+        let text = document.querySelector('textarea');
+        let btn = document.querySelector('button');
+        let ul = document.querySelector('ul');
+        // 注册绑定事件
+        btn.onclick = function(){
+            if (text.value == '')
+            {
+                alert('输入内容为空');
+                return false;
+            }
+            else{
+                // 创建节点
+                let lis = document.createElement('li');
+                // 使得文本框的内容赋值给li
+                lis.innerHTML = text.value + "<a href = 'javascript:;'>删除</a>";
+                // 将新留言的li放在前面
+                ul.insertBefore(lis,ul.children[0]); 
+            }
+
+        // 添加删除留言功能
+        let as = document.querySelectorAll('a');
+        // 遍历 a 
+        for(let i = 0;i < as.length;i++){
+        // 点击 a
+            as[i].onclick = function(){
+                // 删除的是ul中的Li   即是a的父级节点
+                ul.removeChild(this.parentNode);
+            }
+        }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: auto;
+            box-sizing: border-box;
+        }
+
+        .box{
+            margin: 200px 200px;
+        }
+
+        ul li{
+            list-style: none;
+        }
+
+        li{ 
+            float: left;
+             width: 50px;
+            height: 50px;
+            background-color: #000;
+            margin-right: 10px;
+            color: #fff;
+            font-size: 45px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>        
+            <li class="hour">1</li>
+            <li class="mintues">2</li>
+            <li class="seconds">3</li>
+        </ul>
+    </div>
+    
+    <script>
+        let hour = document.querySelector('.hour');
+        let min = document.querySelector('.mintues');
+        let second = document.querySelector('.seconds');
+
+        let input_time = +new Date('2022-10-26 20:27:00');
+        function countdown(){
+        let now_time = +new Date();
+        let times = (input_time - now_time)/1000;
+        let h = parseInt(times /60 /60 %24);
+        h = h < 10 ? '0'+h: h;
+        hour.innerHTML = h;
+        let m = parseInt(times /60 /60 %60);
+        m = m < 10 ? '0'+m:m;
+        min.innerHTML = m;
+        let s = parseInt(times %60);
+        s = s < 10 ? '0'+s :s;
+        second.innerHTML = s;
+        }
+        countdown();
+        setInterval(countdown,1000);
+
+       
+        
+
+    </script>
+    
+</body>
+</html>

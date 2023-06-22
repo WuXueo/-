@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            margin: 280px 500px;
+        }
+    
+        div img{
+            width: 150px;
+            height: 150px;
+        }
+        div .btn{
+            position: absolute;
+            top:-280px;
+            left:-516px;
+            height: 15px;
+            width: 15px;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            color: orange;  
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+    <img src="./img/tao.png">
+        <div class="btn">
+            X
+        </div>
+    </div>
+
+    <script>
+        var btn = document.querySelector('.btn');
+        btn.onclick = function(){
+            box.style.display = 'none';
+        }
+    </script>
+        
+    
+</body>
+</html>

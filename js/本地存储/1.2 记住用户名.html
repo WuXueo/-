@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt">
+    <input type="checkbox" id="remember">记住用户名
+    
+    <script>
+        // 获取元素
+        let ipt = document.querySelector('#ipt');
+        let remember = document.querySelector('#remember');
+        // 如果本地存储有数据 就把本地存储内容赋值给文本框 并且勾选复选框
+        if(localStorage.getItem('username')){
+            ipt.value = localStorage.getItem('username');
+            remember.checked = true;
+        }
+        // 复选框发生改变 如果复选框勾选上 则将输入内容写进本地存储
+        remember.addEventListener('change',function(){
+            if(this.checked){
+                localStorage.setItem('username',ipt.value);
+            }
+            // 如果不勾选复选框 则将复选框内容删除
+            else{
+                localStorage.removeItem('username');
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0 auto;
+    }
+    .in{
+        margin: 100px auto;
+        width:400px;
+        height: 100px;
+    }
+   .mess{
+        display: inline-block;
+        background-image: url(./img/mess.png);
+        background-repeat: no-repeat;
+        /* 直接可以设置背景图片的内边距 */
+        padding-left: 20px; 
+        font-size: 13px;
+        color: gray;  
+    }
+    .wrong{
+        background-image: url(./img/wrong.png);
+        color:red;
+    }
+
+    .right{
+        background-image: url(./img/right.png);
+        color: green;
+    }
+</style>
+
+<body>
+
+    <div class="in">
+        <input type="password" >
+        <div class="mess">
+            <p >请输入6-16位密码</p>
+        </div>
+    </div>
+    
+    <script>
+        // 获取元素 一个是输入的密码 一个是后面的图片
+        var input = document.querySelector('input');
+        var text = document.querySelector('.mess');
+        // 当失去焦点时 就要进行判断 对类名进行改变
+            input.onblur = function(){
+                if(input.value.length > 16 || input.value.length < 6 ){
+                    text.className = 'mess wrong'; 
+                    text.innerHTML = '您输入的位数不对要求6~16位';
+            }
+            else{
+                text.className = 'mess right';
+                text.innerHTML = '您输入的正确';
+            }
+        }
+    </script>
+
+</body>
+</html>

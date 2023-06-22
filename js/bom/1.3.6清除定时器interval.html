@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            let bgn = document.querySelector('.begin');
+            let end = document.querySelector('.end');
+            bgn.addEventListener('click',function(){
+                time = setInterval(function(){
+                console.log('HELLO!');
+            },1000)
+            
+        })
+            end.addEventListener('click',function(){
+                clearInterval(time);
+            })    
+           
+        }
+    </script>
+
+
+    <button class="begin">开始定时</button>
+    <button class="end">停止定时</button>
+    
+
+</body>
+</html>

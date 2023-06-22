@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img { 
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+   <!--  <button id = 'btn'>唐伯虎</button>            //事件源
+    <script>
+        var btn = document.getElementById('btn');      //获取事件源
+        btn.onclick = function(){                     // 事件类型 事件处理程序
+            alert('点秋香');                          // 控制台输出  
+        }
+    </script> -->
+
+    <!-- <div>123</div>
+    <script>
+        // 获取事件源
+        var box = document.querySelector('div');
+        //  绑定事件 注册事件
+        box.onclick = function(){
+            console.log('我被选中了');
+        }
+    </script> -->
+
+    <!-- <button>显示当前系统时间</button>
+    <div>某个时间</div>
+    <p>1123</p>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function(){
+            div.innerText = getDate();
+        }
+        // 获取系统时间
+        function getDate(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth()+1;
+            var dates = date.getDate();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var day = date.getDay();
+            return '今天是：' + year +'年' + month +'月' +dates +'日' + arr[day];
+        }
+        // 元素可以不用添加事件
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+        p.innerHTML = '<strong>今天是:<\strong>2022年'
+    </script> -->
+
+    <!-- <button id="btn1">第一张</button>
+    <button class="btn2">第二张</button>
+    <img id="img" src="img/1.jpg" title="李敏镐">
+    <script>
+        var btn_1 = document.getElementById('btn1');
+        var btn_2 = document.querySelector('.btn2');
+        var img = document.getElementById('img');
+        btn_1.onclick = function() {
+            img.src = 'img/1.jpg'; 
+            img.title = '李敏镐';
+        }
+        btn_2.onclick = function() {
+            img.src = 'img/2.jpg';
+            img.title = '金宇彬';
+        }
+    </script> -->
+
+   <!--  <img src="./img/上午.jpg">
+    <div>早上好！该吃早餐啦！！</div>
+    <script>
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        var date = new Date();
+        var h = date.getHours();
+       if (h < 12){
+        img.src = './img/上午.jpg';
+        div.innerHTML= '早上好！该吃早餐啦！！';
+       }
+       else if(h < 18){
+        img.src = './img/中午.jpg';
+        div.innerHTML = '吃中饭啦！';
+       }
+       else{
+        img.src = './img/晚上.jpg'; 
+        div.innerHTML = '少吃点 晚餐时间到！';
+       }
+    </script> -->
+
+    <button>按钮</button>
+    <input type="text" value="请输入一个你想要的东西">
+    <script>
+        // 获取元素
+        var btn = document.querySelector('button');
+        var input = document.querySelector('input');
+        // 注册事件 处理程序
+        btn.onclick = function(){
+            // 改变input中的值
+            input.value = '10亿美金';
+            // 禁用按钮
+            this.disabled = true;
+        }
+    </script>
+
+
+
+
+
+</body>
+</html>

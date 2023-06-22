@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        table{
+            margin: 250px auto;
+            width: 500px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        
+        thead{
+            background-color: #ccc;
+            font-size: 15px ;
+            font-weight: 800;
+        }
+
+        th{  
+            height: 30px;
+            border:1px solid;
+        }    
+        td{
+            height: 30px;
+            border:1px solid;
+        }  
+    </style>
+</head>
+
+<body>
+    <table>
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>科目</th>
+            <th>成绩</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>魏璎珞</td>
+            <td>Java</td>
+            <td>100</td>
+            <td><a href="javascript:;">删除</a></td> 
+        </tr>
+        <tr>
+            <td>弘历</td>
+            <td>Java</td>
+            <td>90</td>
+            <td><a href="javascript:;">删除</a></td> 
+        </tr>
+        <tr>
+            <td>傅恒</td>
+            <td>Java</td>
+            <td>99</td>
+            <td ><a href="javascript:;">删除</a></td> 
+        </tr>
+        <tr>
+            <td>明玉</td>
+            <td>Java</td>
+            <td>89</td>
+            <td><a href="javascript:;">删除</a></td> 
+        </tr> -->
+    </tbody>
+    </table>
+
+    <script>
+        // 创建对象
+        let date = [
+            {
+                name : '魏璎珞',
+                subject : 'javascript',
+                score : 100
+            },
+            {
+                name : '弘历',
+                subject : 'javascript',
+                score : 100
+            },
+            {
+                name : '傅亨',
+                subject : 'javascript',
+                score : 100
+            },
+            {
+                name : '明玉',
+                subject : 'javascript',
+                score : 100
+            },
+            {
+                name : '大猪蹄子',
+                subject : 'javascript',
+                score : 0
+            }
+        ]
+        // 创建行
+        let tbody = document.querySelector('tbody');
+        // 遍历每一行 所以利用date的长度
+        for(let i = 0; i < date.length;i++){
+            // 创建行
+            let tr = document.createElement('tr');
+            // 将行追加到tbody中
+            tbody.appendChild(tr);
+            // 创建单元格
+            // 遍历列的对象 date是对象 date[i]是每一属性名 代表每一行
+            for( k in date[i]){
+                // 创建单元格元素
+                let td = document.createElement('td');
+                // 将遍历的单元格追加到每一行中
+                tr.append(td);
+                // 将每一个单元格内容等于每一个属性值
+                td.innerHTML = date[i][k];
+                // 将每一个单元格追加到每一行
+                tr.appendChild(td);  
+            }
+            // 创建删除单元格
+            let td = document.createElement('td');
+            // 将删除单元格赋值a弱拷贝
+            td.innerHTML = '<a href = "javascript:;">删除</a>';
+            // 将每一个行单元格追加到行后
+            tr.appendChild(td);
+            } 
+        // 获取 a  进行删除
+        let as = document.querySelectorAll('a');
+        // 遍历每一个a
+        for(let i = 0;i < as.length;i++){
+            // 绑定事件
+            as[i].onclick = function(){
+                // 去除行 所以就是a的父级td的父级tr
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+        
+        //  for( k in obj){
+        //     k是属性名
+        //     obj是对象
+        //     obj[k]是属性值
+        //  }
+    </script>
+</body>
+</html>
+
+<!-- 思路：
+1.创建数据 date
+2.创建行
+3.创建单元格 {包括：普通、创建删除单元格}
+4.绑定a的删除事件 -->

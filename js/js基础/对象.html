@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    //    创建对象的字面量方式
+       /* obj = {
+            name:'可可',
+            type:'阿拉斯加犬',
+            age : 5,
+            color:'棕红色',
+            skill:function(){
+                console.log('bark','showFilm');
+            }
+            
+        };
+        console.log(obj.name);
+        console.log(obj.type);
+        console.log(obj['color']);
+        obj.skill(); */
+
+        // 用new Object方法创建对象
+        /* var Object = new Object();
+        Object.name = '鸣人';
+        Object.sex = '男';
+        Object.age = 19;
+        Object.skill = function(){
+            console.log('影分身术');
+        }
+        console.log(Object.name);
+        console.log(Object.sex);
+        console.log(Object['age']);
+        Object.skill(); */
+
+        // 运用构造函数方法创建对象
+        /* function Hero(uname,type,blood){
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function(uattack){
+                console.log(uattack);
+            }
+        }
+        // 对象
+        var lianpo = new Hero('廉颇','力量型','500血量');
+        console.log(lianpo.name);
+        console.log(lianpo.type);
+        console.log(lianpo['blood']);
+        lianpo.attack('近战');
+        var houyi = new Hero('后羿','射手型','100血量');
+        console.log(houyi.name);
+        console.log(houyi.type);
+        console.log(houyi['blood']);
+        houyi.attack('远程'); */
+
+        /* function Star(uname,age,sex){
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function(sang){
+                console.log(sang);
+            }
+        }
+        var ldh = new Star('刘德华',18,'男');
+        console.log(ldh.name);
+        console.log(ldh.age);
+        console.log(ldh['sex']);
+        ldh.sing('冰雨'); */
+
+        // 创建一个电脑对象
+        /* var Obj = {
+            color:'black',
+            weight:20,
+            brand:'戴尔',
+            size:'G3',
+            func:function(){
+                console.log('看电影','敲代码','听音乐','打游戏');
+            }
+        }
+        console.log(Obj.color);
+        console.log(Obj.weight);
+        console.log(Obj['brand']);
+        console.log(Obj['size']);
+        Obj.func(); */
+
+        // 创建一个按钮对象
+        /* var button = new Object();
+        button.width = '20px';
+        button.length = '50px';
+        button.background = 'pink';
+        button.behave = function(){
+            console.log('点击');
+        }
+        console.log(button.width);
+        console.log(button.length);
+        console.log(button['background']);
+        button.behave(); */
+
+        // 创建一个车的对象
+        // 方法1
+        /* var car = {
+            weight:200,
+            color:'black',
+            brand:'东方红',
+            skill:function(){
+                console.log('可以载人，拉货和耕田');
+            }
+        }
+        console.log(car.weight);
+        console.log(car.color);
+        console.log(car['brand']);
+        car.skill(); */
+    
+        // 方法2
+        /* var car = new Object();
+        car.weight = 200;
+        car.color = 'black';
+        car.brand = '东方红';
+        car.skill = function(){
+            console.log('可以载人、拉货和耕田');
+        }
+        console.log(car.weight);
+        console.log(car.color);
+        console.log(car['brand']);
+        car.skill(); */
+
+        // 构造函数 反转任意数组
+        function Reverse(arr){
+            this.reserve = function(){
+                var new_arr = [];
+                var j = 0;
+                for(var i = arr.length -1;i >=0 ; i--){
+                    new_arr[j] = arr[i];
+                    j++;
+                }
+                console.log(new_arr);
+            }
+        }
+        var arr1 = new Reverse([5,6,2,70,2,3]);
+        arr1.reserve();
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

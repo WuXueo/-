@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 改变div盒子中的内容 -->
+    <div></div>
+    <script>
+        // 获取参数
+        console.log(location.search);
+        // location.search.substr 从？开始去除
+        let para = location.search.substr(1);
+        // 将 uname = red 以等号进行分割为数组
+        let arr = para.split('=');
+        // 获取页面中元素
+        let box = document.querySelector('div');
+        // 将页面内容等于 数组下标为1的元素 即可获得red
+        box.innerHTML = arr[1] +'欢迎你！';
+    </script>
+</body>
+</html>

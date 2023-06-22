@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 访问、创建数组
+       /* var arr1 = ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+        console.log(arr1[6]); */
+
+        // 遍历数组
+        /* var arr = ["关羽","张飞","马超","赵云","黄忠","刘备","姜维"];
+        for(var i = 0;i < 7;i++){
+            console.log(arr[i]);
+        } */
+
+        //数组求和
+     /*    var arr = [2,6,1,7,4];
+        var sum = 0;
+        var avg = 0;
+        for(var i = 0;i <arr.length;i++){
+            sum += arr[i];
+        }
+        avg = sum/arr.length;
+        console.log(sum);
+        console.log(avg); */
+
+        // 求最大值
+        /* var arr = [2,6,1,77,52,25,7];
+        var max = 0;
+        for (var i = 0;i <arr.length;i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }
+        }
+        console.log(max); */
+
+        // 数组转换分割字符串
+        /* var arr = ['red','green','blue','pink'];
+        var str = '';
+        var st = '|'
+        for(i = 0; i <arr.length;i++){
+            str += arr[i] + st;
+        }
+        console.log(str); */
+
+        // 新增元素
+        /* var arr = [ ];
+        for (var i = 0;i <10;i++){
+            arr[i] = i+1;
+        }
+        console.log(arr); */
+
+        // 筛选数组   方法1
+/*         var arr = [2,0,6,1,77,0,52,0,25,7];
+        var arr1 = [];
+        var j = 0;
+        for (var i = 0 ; i <arr.length;i ++){
+            if(arr[i] > 10){
+                arr1[j] = arr[i];
+                j++; 
+            }
+        }
+        console.log(arr1); */
+        // 方法2
+       /*  var arr = [2,0,6,1,77,0,52,0,25,7];
+        var arr1 = [];
+        for (var i = 0 ; i <arr.length;i ++){
+            if(arr[i] > 10){
+                arr1[arr1.length] = arr[i];
+            }
+        }
+        console.log(arr1); */
+
+        // 删除指定元素
+        /* arr = [2,0,6,1,77,0,52,0,25,7];
+        var arr1 = [];
+        var j = 0;
+        for(var i = 0;i < arr.length;i ++){
+            if(arr[i] != 0){
+                arr1[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(arr1) */
+
+        // 翻转数组
+       /*  var arr = ['red','green','blue','pink','purple'];
+        var arr1 = [];
+        var j = 0;
+        for( var i = arr.length - 1; i >= 0 ;i--){
+            arr1[j] = arr[i];
+            j++;
+        }
+        console.log(arr1);
+ */
+
+        // 冒泡排序
+        var arr = [5,4,3,2,1];
+        var temp;
+        for(var i = 0; i <= arr.length-1;i ++){       //一共多少层
+            for(var j =0; j  <= arr.length-i-1;j++){   //里面交换的次数
+                if(arr[j] > arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

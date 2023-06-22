@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 利用对象封装自己的数学对象 里面有PI 最大值 最小值 
+       /*  var mymath = {
+            PI : 3.1415926,
+            max : function(){
+                var max = arguments[0];
+                for(var i = 1;i < arguments.length;i++){
+                    if (max < arguments[i]){
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min :function(){
+                var min = arguments[0];
+                for(var i = 1; i < arguments.length;i++){
+                    if(min >= arguments[i]){
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(mymath.PI);
+        console.log(mymath.max(5,8,9,10,99,100,2));
+        console.log(mymath.min(5,2,6,3,4,0,8,-2)); */
+
+        // 猜数字游戏        随机数
+        /* function Getrandom(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
+        }
+        var num  = Getrandom(1,10);
+    
+        while (true){
+        var num1 = prompt('请输入一个数字');
+        if(num > num1){
+            alert('数字小了');
+        }
+        else if(num < num1){
+            alert('数字大了');
+        }
+        else{
+            alert('猜对了，结束程序');
+            break;
+        }
+        } */
+
+        /* function Getrandom(min,max){
+            return Math.floor(Math.random() * (max - min +1)+min);
+        }
+        var random = Getrandom(1,50);
+        for(var i = 10;i > 0 ;i--){
+            var num = prompt('请输入一个数字(1-50):');
+            if(random > num){
+                alert('猜小了');
+            }
+            else if(random < num){
+                alert('猜大了');
+            }
+            else if(random == num){
+                alert('猜对了');
+                break;
+            }
+        }
+        if(i ==0 && random != num){
+            alert('没有次数了！');
+        } */
+
+        // date构造函数
+        /* var date = new Date();
+        console.log(date); */
+
+        /* var date = new Date('2022-9-30 21:44:00');
+        console.log(date); */
+
+        // 封装年月日
+        /* var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var day = date.getDate();
+        var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var days = date.getDay();
+        console.log(year +'年' + month +'月'+ day + '日' +arr[days]); */
+
+        // 封装时分秒
+        /* function Time(){
+            var date = new Date();
+            hour = date.getHours();
+            hour = hour < 10 ? '0'+hour : hour;
+            minutes = date.getMinutes();
+            minutes = minutes < 10 ? '0'+minutes :minutes; 
+            seconds = date.getSeconds();
+            seconds = seconds < 10 ? '0' + seconds :seconds;
+            console.log(hour + '时' + minutes +'分'+seconds + '秒');
+        }
+        Time(); */
+
+        // 倒计时
+        /* function countdown(time){
+            var date = +new Date();                  //现在时间的毫秒数
+            var f_time = +new Date(time);            //输入时间的毫秒数
+            var times = (f_time - date)/1000;               //总秒数
+            var d = parseInt(times / 60 /60/24);            //天
+            var h = parseInt(times / 60/ 60 % 24);          //时
+            var m = parseInt(times / 60 /60 %60);          //分
+            var s = parseInt(times % 60);                  //秒
+            return d +'天' + h + '时' +m +'分' + s +'秒';
+        }
+        console.log(countdown('2022-10-2 18:00:00')); */
+        
+        /* function countdown(time){
+            var now_time = +new Date();
+            var input_time = +new Date(time);
+            var times = (input_time - now_time)/1000;   //从输入时间到现在的秒数
+            var d = parseInt(times /60 /60 /24);
+            d = d <10 ? '0' +d :d;
+            var h = parseInt(times /60 /60 %24);
+            h = h <10 ? '0' +'h' :h;
+            var m = parseInt(times/60 /60 %60);
+            m = m <10 ? '0' +'m' :m;
+            var s = parseInt(times  %60);
+            s = s <10 ? '0' +'s' :s;
+            return d +'天'+h +'小时' +m +'分' +s +'秒';
+            }
+        console.log(countdown('2022-10-2 18:00:00')); */
+
+        // 去掉工资高于2000
+        /* var salary = [1500,1200,2000,2100,1800];
+        var new_salary = [];
+        for(var i = 0; i < salary.length;i++){
+            if(salary[i] < 2000){
+                // new_salary[new_salary.length] = salary[i];
+                new_salary.push(salary[i]);
+            }
+        }
+        console.log(new_salary); */
+
+        // 去重
+        /* function unique(arr){
+            var newArr = [];
+            for(var i = 0; i <arr.length;i++)
+            {
+                if(newArr.indexOf(arr[i]) === -1){
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        var demo = unique(['c','a','z','a','x','a','x','c','b']);
+        console.log(demo); */
+
+        // 字符串查找指定字符
+        /* var string = 'abcoefxyzzopp';
+        var index = string.indexOf('o');
+        var num = 0;
+        while(index != -1){
+            console.log(index);
+            num++;
+            index = str.indexOf('o',index +1);
+        }
+        console.log('o出现的次数为'+num);
+ */
+       /*  var string = ['red','blue','red','green','pink','red'];
+        var index = string.indexOf('red');
+        var num = 0;
+        while(index != -1){
+            console.log(index);
+            num++;
+            index = string.indexOf('red',index+1);
+        }
+        console.log('red出现的次数'+ num); */
+
+        //根据位置返回字符  有一个对象 判断里面是否有该属性 对象['属性名']
+        /* var string = 'abcoefoxyozzopp';
+        var o = {};                             //创建一个对象
+        for(var i = 0; i< string.length;i++){
+            var chars = string.charAt(i);      //chars存放每一个字符
+            if(o[chars]){                    //属性值
+                o[chars]++;                  //遍历每一个字符的数量
+            }
+            else{
+                o[chars] = 1;
+            }
+        }
+        console.log(o);                       //o是每一个字符出现的次数
+        //遍历对象
+        var max = 0;
+        var char = '';
+        for(var k in o){       //k是属性名
+            if(max < o[k]){    //o[k] 是属性值
+                max = o[k];
+                char = k;                      //通过遍历选出出现次数最多的 赋值给max
+            }
+        }
+        console.log('出现的最多字符的次数是'+ max);
+        console.log('最多的字符是' + char); */
+
+        // 把所有的o替换为‘*’
+        /* var str = 'abcoefoxyozzopp';
+        while (str.indexOf('o') !== -1){
+           str =  str.replace('o','*');
+        }
+        console.log(str); */
+
+        // 字符串作业
+        var str = 'abaasdffggghhjjkkgfddsssss3444343';
+        //字符长度
+        long = str.length;
+        console.log(long);
+        // 是否存在指定字符
+        function find(str ,char){
+        index = str.indexOf(char);
+        if(index != -1){
+            console.log ('存在字符' + char);
+        }
+        else{
+            console.log('不存在字符' + char);
+        }
+        }
+        console.log(find(str , 'i'));
+        console.log(find(str , 'c'));
+        console.log(find(str , 'b'));
+        // 指定替换字符
+        function rep(string,char,new_char){
+        while(string.indexOf(char) !== -1){
+                string = string.replace(char,new_char);
+            }
+            return string;
+        }
+        console.log(rep(str,'g','22'));
+        console.log(rep(str,'ss','b'));
+        // 截取从开始位置到结束位置的字符串
+        console.log(str.substr(1,5));     //截取1-5的字符串
+        // 找出字符串出现最多的字符和出现的次数
+        function find_l(str){
+        var o = {};
+        for( var i = 0;i <str.length;i++){
+            var chars = charCodeAt(i);
+            if (o[chars]){
+                o[chars]++;
+            }
+            else{
+                o[chars] = -1;
+            }
+        }
+        console.log(o[chars]);
+        for(k in o){
+            var max = 0;
+            if(max < o[chars]){
+                max = o[chars];
+                char = k;
+            }
+        console.log(max);
+        console.log(char);
+        }
+    }
+    console.log(find_l(str));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

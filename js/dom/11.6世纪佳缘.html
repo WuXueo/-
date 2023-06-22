@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 auto;
+        }
+
+        .box{
+            width: 500px;
+            height: 250px;
+        }
+
+        input{
+            width: 200px;
+            height: 20px;
+            margin-right: 15px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class = 'box'> 
+        <input type="text" class="txt" value="邮箱/ID/手机号">
+        <input type="password" id = 'psd' value="密码">
+    </div>
+    <script>
+        // 获取元素
+        var txt = document.querySelector('.txt');
+        var psd = document.getElementById('psd');
+        // 注册
+        txt.onfocus = function(){
+            if(txt.value === '邮箱/ID/手机号'){
+                txt.value = '';    
+            }
+            txt.style.color = 'black';
+        }
+
+        txt.onblur = function(){
+            if(txt.value === ''){
+                this.value = '邮箱/ID/手机号';
+            }
+            this.style.color = 'gray'
+        }
+
+        psd.onfocus = function(){
+            if(psd.value === '密码'){
+            psd.value = '';
+            }
+            psd.style.color = 'black';
+        }
+        psd.onblur = function(){
+            if(psd.value === ''){
+                psd.value = '密码';
+            }
+            psd.style.color = 'gray';
+        }
+    </script>
+
+//有一个问题 是密码框 初始时应当有密码二字为默认，可显示。
+</body>
+</html>

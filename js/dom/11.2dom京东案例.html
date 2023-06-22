@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东密码</title>
+    <style>
+        .box{
+            position: relative;
+            width: 350px;
+            height: 30px;
+            margin: 200px auto;
+        }
+        .box input{
+            height: 30px;
+            width: 300px;
+            border:0;
+            border-bottom: 1px solid gray;
+            outline: none;
+        }
+        .box img{
+            position: absolute;
+            top: 3px;
+            right: 45px;
+            width: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class=" box">
+        <label for = ''></label>
+        <img src="./img/close.png" id = 'eye'>
+        <input type="password" name="" id="password" >
+    </div>
+    <script>
+        // 获取元素
+        var btn = document.querySelector('img');
+        var psw = document.getElementById('password');
+        var flag = 0;
+        // 注册事件 处理程序
+            btn.onclick = function(){
+            // 点击之后 需要flag 进行判断
+            if (flag == 0 ){
+            psw.type = 'text';
+            eye.src = './img/open.png';
+            flag = 1;}
+        else
+        {
+            psw.type = 'password';
+            eye.src = './img/close.png';
+            flag = 0;
+        }
+    }
+    </script>
+    
+</body>
+</html>

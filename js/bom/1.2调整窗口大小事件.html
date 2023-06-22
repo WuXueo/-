@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 50px;
+            width: 850px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // // 调整窗口大小
+        // window.addEventListener('resize',function(){
+        //     console.log('变化了');
+        // })
+        
+        // window.onresize = function(){
+        //     console.log('变化了');
+        // }
+        window.addEventListener('load',function(){
+            let div = document.querySelector('div');
+            window.addEventListener('resize',function(){
+                if(window.innerWidth <= 800){
+                    div.style.display = 'none';
+                }else{
+                    div.style.display = 'block';
+                }
+            })
+        })
+    </script>
+    <div></div>
+</body>
+</html>

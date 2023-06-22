@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            // 获取元素
+            let btn = document.querySelector('button');
+            let text = document.querySelector('input');
+            // 定义倒计时 （全局变量）
+            let time = 3;
+            // 绑定事件
+            // 当点击按钮时 按钮被禁用 开始倒计时
+            // 如果倒计时到0秒时 按钮禁用打开 time回归3秒
+            // 如果倒计时不等于0时 里面的倒计时time以1000毫秒进行递减
+            btn.addEventListener('click',function(){
+                btn.disabled = true;
+                let set_time = setInterval(function(){
+                    if(time == 0){
+                    clearInterval(set_time);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    time = 3;
+                    }
+            else{
+                btn.innerHTML = '还剩'+time+'秒';
+                            time--;
+                }
+            },1000) 
+                                })
+        }
+            
+    </script>
+
+    <input type="text">
+    <button>发送</button>
+    
+</body>
+</html>

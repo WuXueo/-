@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是美女</li>
+        <li>我是美女</li>
+        <li>我是美女</li>
+        <li>我是美女</li>
+        <li>我是美女</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul');
+        // 委托事件 不需要给每个子节点添加alert  仅可以给父节点ul添加侦听器 通过冒泡原理可以影响每一个子节点
+            ul.addEventListener('click',function(e){
+            // alert('我是美女');
+            // e.target 可获得我们点击的每一个对象
+            e.target.style.backgroundColor = 'pink';
+            })
+    </script>
+</body>
+</html>

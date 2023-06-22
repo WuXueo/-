@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统注册方式</button>
+    <button>事件侦听注册方式</button>
+<script>
+    let btn = document.querySelectorAll('button');
+    btn[0].onclick = function(){
+        alert('11');
+    }
+    // 可添加多个侦听器（事件处理方式）
+    btn[1].addEventListener('click',function(){
+        alert('22');
+        alert('33');
+    })
+</script>
+</body>
+</html>

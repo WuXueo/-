@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .nav {
+            width: 1000px;
+            height: 30px;
+            border: 1px solid gray;
+            background-color: #f1f1f1;
+        }
+
+        .lis li {
+            float: left;
+            padding-top: 5px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .xiao_uls {
+            display: none;
+            width: 100px;
+            height: 100px;
+            /* border:2px solid orange; */
+            margin-top: 1px;
+        }
+
+        .xiao_uls li {
+            border: 1px solid orange;
+            border-top: 1px;
+        }
+
+        .lis:hover {
+            background-color: #FFF5DA;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="lis">
+            <li>登录</li>
+            <li>微博
+                <ul class="xiao_uls">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>博客
+                <ul class="xiao_uls">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+            <li>邮箱
+                <ul class="xiao_uls">
+                    <li>私信</li>
+                    <li>评论</li>
+                    <li>@我</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let uls = document.querySelector('.lis');
+        let lis = uls.children;
+
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                lis[i].children[0].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+                lis[i].children[0].style.display = 'none';
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

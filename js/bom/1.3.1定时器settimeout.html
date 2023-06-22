@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let time1 = setTimeout(function(){
+                console.log('2秒时间到');
+            },2000);
+        function explorsion(){
+            console.log('爆炸啦');
+        }
+        let explor = setTimeout(explorsion,3000);
+        // 1.调用setTimeout函数时 省略window
+        // 2.可以直接在方法中调用函数 也可以直接写函数
+        // 3.第二个参数单位是毫秒
+        // 4.通常会给定时器加标识符
+    </script>
+    
+</body>
+</html>
