@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 大括号 量词符
+        var reg = /^abc{3}$/;
+        console.log(reg.test('abcabcabc'));
+        console.log(reg.test('ccc'));
+        // 必须要有abc出现 且c要重复3次
+        console.log(reg.test('abccc'));
+        console.log('--------------------');
+
+        // 中括号 表示一个任意字符
+        var reg1 = /^[abc]$/;
+        console.log(reg1.test('a'));
+        console.log(reg1.test('cccc'));
+        console.log(reg1.test('aa'));
+        console.log('---------------------');
+
+        // 小括号 表示优先级  必须让abc重复三次
+        var reg2 = /^(abc){3}$/;
+        console.log(reg2.test('abcabcabc'));
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 原型对象的应用 扩展内置对象方法
+        console.log(Array.prototype);
+
+        // 自定义一个函数
+        // 通过.进行添加 是直接将原型对象中的函数追加
+        Array.prototype.sum = function  (){
+            var sum = 0;
+            for(var i = 0; i < this.length;){
+                sum += this[i];
+            }
+            return sum;
+        }
+
+        // //  这样直接覆盖掉原来的函数 会报错
+        //     Array.prototype = {
+        //         sum:function(){
+        //         var sum = 0;
+        //             for(var i = 0; i < this.length;){
+        //                 sum += this[i];
+        //             }
+        //         return sum;
+        //         }
+        //     }
+
+        // 方法1
+        var arr = [1,2,3];
+       console.log(arr.sum());
+       
+        // 方法2
+        // 通过new创建一个实例对象 （记得传值进去）
+        var arr1 = new Array(11,22,33);
+        console.log(arr1.sum());
+    </script>
+    
+</body>
+</html>

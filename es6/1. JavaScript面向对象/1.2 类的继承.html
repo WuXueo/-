@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // // 父类
+        // class Father{
+
+        //     constructor(){
+                
+        //     }
+
+        //     // 方法
+        //     money(){
+        //         console.log(100);
+        //     }
+        // }
+
+        // // 子类继承父类
+        // class Son extends Father{
+    
+        // }
+
+        // var son = new Son();
+        // son.money();
+
+        // super关键字 调用构造函数
+        // class Father{
+        //     constructor(x,y){
+        //         this.x = x;
+        //         this.y = y;
+        //     }
+        //     sum(){
+        //         console.log(this.x + this.y);
+        //     }
+        // }
+
+        // class Son extends Father{
+        //     // 将子类中的参数传给父类中
+        //     constructor(x,y){
+        //         // 让子类继承父类中的方法
+        //         super(x,y);
+        //     }
+        // }
+
+        // res = new Son(1,2);
+        // // 要引用方法
+        // res.sum();
+
+        // // super关键字 调用普通函数
+        // class fuqin{
+        //     constructor(){
+
+        //     }
+
+        //     say(){
+        //         return('我是爸爸');
+        //     }
+        // }
+
+        // class erzi extends fuqin{
+        //     constructor(){
+
+        //     }
+
+        //     say(){
+        //         super();
+        //     }
+        // }
+
+        // 构造一个父类
+        class Father{
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            // 方法
+            sum(x,y){
+                console.log(this.x + this.y);
+            }
+        }
+        // 构造一个子类
+        // 子类继承父类加法运行 同时扩展减法运算
+        class Son extends Father{
+            constructor(x,y){
+                // 必须使用super()调用父类的构造函数
+                // super必须在子类this之前调用
+                super(x,y);
+                this.x = x;
+                this.y = y;
+               
+            }
+            // 子类方法
+            sub(x,y){
+                console.log(this.x - this.y);
+            }
+        }
+
+        var son = new Son(5,1);
+        son.sub();
+        son.sum();
+
+        // 谁调用了方法 this指的就是谁
+    </script>
+    
+</body>
+</html>

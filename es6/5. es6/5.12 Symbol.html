@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 内存地址不相等 Symbol 是独一无二的 值
+        const s1 = Symbol('name');
+        const s2 = Symbol('name2');
+        console.log(s1 === s2);
+
+        let name = Symbol('name');
+        console.log(name);
+
+        let obj = {
+            [s1]:'吴雪'
+        };
+        // obj[s1] = '吴雪';
+        // 如果用Symbol定义对象中的变量，取值时一定要用[变量名]
+        console.log(obj[s1]);
+    </script>
+    
+</body>
+</html>

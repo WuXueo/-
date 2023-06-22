@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // let ary =[1,2,3];
+        // console.log(...ary);
+
+        // // 合并数组
+        // let ary1 = [1,2,3];
+        // let ary2 = [4,5,6];
+        // let ary3 = [...ary1,...ary2];
+        // console.log(ary3);
+
+        // let ary1 = [1,2,3];
+        // let ary2 = [4,5,6];
+        // let ary3 = ary1.push(...ary2);
+        // console.log(ary1);
+
+        // 将伪数组转换为真正的数组
+        // var oDivs = document.getElementsByTagName('div');
+        // console.log(oDivs);
+        // var ary =  [...oDivs];
+        // console.log(ary);
+        // ary.push('a');
+        // console.log(ary);
+
+        // 方法2
+        // 伪数组长度必不可少
+        // let a = {
+        //     "0":'张三',
+        //     '1':'李四',
+        //     '2':'王五',
+        //     'length':3
+        // };
+        // let arrylike = Array.from(a);
+        // console.log(arrylike); 
+
+        // 可接受第二个参数
+        let arryLike = {
+            '0':'1',
+            '1':'2',
+            '2':'3',
+            'length':3
+        };
+        let newAry = Array.from(arryLike,item => item *2);
+        console.log(newAry);
+    </script>
+    
+</body>
+</html>

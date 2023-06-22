@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 利用RegExp对象来创建 正则表达式
+    var reg = new RegExp(/123/);
+    console.log(reg);
+    // 利用字面量创建 
+    var rg = /123/;
+    console.log((rg.test(123)));
+    // 注意要输入引号 如果是字符串的话
+    console.log(rg.test('ab'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // function fn(){
+        //     console.log('想喝瑞');
+        //     console.log(this);
+        // }
+
+        function fn(x,y){
+            console.log('一定瘦下来');
+            console.log(this);
+            console.log(x+y);
+        }
+        var o ={
+            name:'吴雪',
+        }
+        // // call() 可以用来调用函数
+        // fn.call();
+        
+        // call()可以改变这个函数的this指向 此时这个函数的this 就指向o这个对象
+        fn.call(o);
+
+        fn.call(o,1,2);
+    </script>
+    
+</body>
+</html>

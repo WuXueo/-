@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="module">
+        import {name,age,sayName} from'./index.js';
+        console.log(name,age,sayName);
+        // 接收对象
+        // import obj,{name ,age,sayName} from './index.js';
+        // 接收所有
+        import * as f from './index.js';
+        console.log(f);
+        
+        // 接收Person
+        import Person from './index.js';
+        console.log(Person);
+        const p = new Person();
+        p.sayAge();
+    </script>
+    
+</body>
+</html>

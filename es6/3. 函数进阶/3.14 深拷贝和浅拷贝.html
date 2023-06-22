@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var obj = {
+        //     id:1,
+        //     name:'andy'
+        // };
+        // var o ={};
+        // // 要将obj对象中的值赋值给o
+        // for(var k in obj){
+        //     o[k] = obj[k];
+        // }
+        // console.log(o);
+
+        console.log('-------------------');
+        var obj = {
+            id:1,
+            name:'吴雪',
+            msg:{
+                age:20
+            }
+        };
+        var o ={};
+        // 将object对象拷贝给o 注意 assign同样是浅拷贝方法 遇到更深层次的数据 只是拷贝了地址
+        Object.assign(o,obj);
+        console.log(o);
+        // 修改msg的值 同样obj的msg也会被修改
+        obj.msg.age = 18;
+        console.log(obj);
+        console.log(o);
+
+        console.log('-----------');
+        // 深拷贝
+        var object ={
+            id:1,
+            name:'吴雪',
+            msg:{
+            age:20
+            },
+            color:['red','pink']
+        }
+        var o = { };
+        // 封装函数
+        // 要将旧对象 拷贝 到 新对象中去
+        // 深拷贝是直接复制
+        function deepCopy(newobject,oldobject){
+            // 先遍历整个数组
+            for(var k in oldobject){
+                // 获取属性值   
+                var item = oldobject[k];
+                // 判断这个值是否是数组   注意要先判断数组 在进行判断是否是对象 因为数组包含在对象中
+                if( item instanceof Array){
+                    newobject[k] = [];
+                    deepCopy(newobject[k],item);
+                }
+                // 判断这个值是否是对象
+                else if(item instanceof Object){
+                    newobject[k] = {};
+                    deepCopy(newobject[k],item);
+                }
+                // 属于简单类型
+                else{
+                    newobject[k] = item;
+                }
+            }
+        }
+        deepCopy(o,object);
+        console.log(o);
+    </script>
+
+</body>
+</html>

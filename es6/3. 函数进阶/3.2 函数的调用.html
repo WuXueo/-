@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 普通函数 this指向window
+        var fn  = function(){
+            console.log('哈哈哈哈一半了');
+        }
+        // 调用普通函数
+        fn();
+        fn.call();
+        // 构造函数
+        function Star(){};
+        new Star();
+        // 绑定事件函数
+        btn.onclick = function(){};
+        // 定时器函数
+        setInterval(function(){},1000);
+        // 立即执行函数
+        (function(){})();
+    </script>
+</body>
+</html>

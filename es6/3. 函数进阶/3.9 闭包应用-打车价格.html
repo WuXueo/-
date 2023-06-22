@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 打车起步价13（3公里以内），之后每多一公里 增加5块钱 用户输入公里数就可以计算打车价格
+        // 如果有拥堵情况 总价格多收取10块钱拥堵费
+
+        var car =( function(){
+            // 起步价是13       局部变量
+            var start = 13;
+            // 总价
+            var total = 0;
+
+            return{
+                // 先要进行判断公里数 n
+                price:function(n){
+                    if(n <= 3){
+                    total = start;
+                }
+                else{
+                    total = (n - 3) * 5 + start; 
+                }
+                return total;
+                },
+                // 进行判断是否拥堵
+                jam:function(flag){
+                    // 如果拥堵的话 在总加上在加10 如果不拥堵 直接输出总价
+                    return flag ? total+10 : total;
+                }
+            }
+        })();
+
+       console.log(car.price(5));
+       console.log(car.jam(true));
+
+       console.log(car.price(1));
+       console.log(car.jam(true));
+       
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //  一个对象
+        var obj ={
+            id:1,
+            pname:'小米',
+            price:5000
+        };
+        // // 传统方法添加和修改属性
+        // obj.num = 1000;
+        // obj.pname = 'iphone13';
+        // console.log(obj);
+
+        // 运用ObjectdefineProperty()修改
+        // 新增对象中的num属性
+        Object.defineProperty(obj,'num',{
+            value:1000,
+            enumerable:true,
+            configurable:true
+        });
+        console.log(obj);
+        // 修改对象里的属性 price 
+        Object.defineProperty(obj,'price',{
+            value:1000,
+        })
+        console.log(obj);
+        
+        // 重写属性
+        Object.defineProperty(obj,'id',{
+            // 不允许修改id属性 值为false 不允许修改    
+            writable:false
+        })
+        // 相当于主键 约束
+        obj.id = 2;
+        console.log(obj);
+
+        // 不允许枚举 
+        Object.defineProperty(obj,'address',{
+            value:'山东菏泽',
+            writable:false,
+            // enumerable 如果值为false 则不允许遍历 默认值是false
+            enumerable:true
+        });
+        console.log(obj);
+        console.log(Object.keys(obj));
+
+        // configurable 
+        Object.defineProperty(obj,'address',{
+            // 不允许被删除
+            configurable:false,
+        })
+        delete obj.address;
+        console.log(obj);       
+        delete obj.num;
+        console.log(obj);   
+    </script>
+</body>
+</html>

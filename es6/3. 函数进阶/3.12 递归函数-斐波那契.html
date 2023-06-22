@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 利用递归函数求斐波那契数列
+    // 用户输入一个n 就可以求出数字对应的兔子序列值
+    function fb(n){
+        // 如果用户输入的是第一项或者第二项就要返回1
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        else{
+            return fb(n-1) + fb(n -2);
+        }
+    };
+    console.log(fb(3));
+</script>
+
+</body>
+</html>

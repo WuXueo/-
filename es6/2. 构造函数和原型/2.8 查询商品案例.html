@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 50px 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            margin:20px auto;
+            width:1000px;
+        }
+        table{
+            margin:0px auto;
+            width: 400px;
+            border: 1px solid #000;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid #000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        按照价格查询:
+        <input type="text" class="start">
+        -
+        <input type="text" class="end">
+        <button class="price_search">搜索</button>
+        按照商品名称查询：
+        <input type="text" class="product">
+        <button class="product_search">查询</button>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>产品名称</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>1</td>
+                <td>小米</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>小米</th>
+                <th>3000</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>小米</th>
+                <th>3000</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>小米</th>
+                <th>3000</th>
+            </tr> -->
+        </tbody>
+    </table>
+
+
+    <script>
+        // 利用新增数组方法操作数据
+        var data =[
+           {
+            id:1,
+            pname:'小米',
+            price:2000
+           },
+           {
+            id:2,
+            pname:'iphone13',
+            price:5000
+           },
+           {
+            id:3,
+            pname:'华为',
+            price:4500
+           },
+           {
+            id:4,
+            pname:'荣耀',
+            price:1000
+           },
+        ];
+
+        // 获取数据
+        var tbody = document.querySelector('tbody');
+        var price_search = document.querySelector('.price_search');
+        var start = document.querySelector('.start');
+        var end = document.querySelector('.end');
+        var product = document.querySelector('.product');
+        var product_search = document.querySelector('.product_search');
+        setData(data);
+        // 把数据渲染到页面中
+           function setData(mydata){
+            // 先清空原来的数据
+            tbody.innerHTML = '';   
+            mydata.forEach(function(value){
+            // 创建一行
+            var tr = document.createElement('tr');
+            // 把数据进行替换
+            tr.innerHTML = '<td>'+value.id+'</td><td>'+value.pname+'</td><td>'+value.price+'</td>';
+            // 将新增的追加到表格
+            tbody.appendChild(tr);
+
+        })
+           }
+
+        // 根据价格查询商品
+        // 当我们点击了查询按钮 可以根据我们的商品价格去筛选数组里面的对象
+      price_search.addEventListener('click',function(){
+        var new_data = data.filter(function(value){
+            return value.price >= start.value && value.price <= end.value;
+        })
+        console.log(new_data);
+        // 把筛选完的对象渲染到页面中
+        setData(new_data);
+      })
+
+    //   根据商品名称查找商品
+    // 如果查询数组中唯一的元素 用some方法更合适 因为它找到这个元素 就不再进行循环 效率更高
+     product_search.addEventListener('click',function(){
+        var arr =[];
+        data.some(function(value){
+            if(value.pname == product.value){
+                // console.log(value);
+                arr.push(value);
+                return true;    // return 后必须写true
+            }
+        });
+        //  把拿到的数据渲染到页面中
+        setData(arr);
+     })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 父构造函数
+        function Father(uname,age){
+            this.uname = uname;
+            this.age = age;
+        }
+        // 父原型对象
+        Father.prototype.money = function(){
+            console.log(10000);
+        }
+        // 子构造函数
+        function Son(uname,age,score){
+            // 将father -> this(son) 
+            Father.call(this,uname,age);
+            this.score = score;
+        }
+        // 子构造函数的方法
+        Son.prototype.exam = function(){
+            console.log('孩子要考试');
+        }
+        // 子类继承父类方法
+        Son.prototype = new Father();
+        // 如果利用对象的形式修改了原型对象 别忘了利用constructor指回原来的构造函数
+        Son.prototype.constructor = Son;
+        var ldh = new Son('刘德华',18,100);
+        console.log(ldh);
+        console.log(Father.prototype);
+        console.log(Son.prototype.constructor);
+
+  
+    
+    </script>
+</body>
+</html>

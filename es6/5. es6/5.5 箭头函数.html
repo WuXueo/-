@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 箭头函数简单应用
+    const fn = () => {
+        console.log('hello');
+    };
+    fn();
+
+    // 定义一个sum函数
+    // 大括号可以省略
+    const sum = (s1,s2) => s1+ s2;
+    res = sum(10,20);
+    console.log(res);
+
+    // 只有一个形参 小括号可以省略
+    const fn1 = v => v;
+    res1 = fn1(22);
+    console.log(res1);
+
+    // 箭头函数中的this指向问题
+    function fn11(){
+        console.log(this);
+        return() => {
+            console.log(this);
+        }
+    }
+    const obj = {name: "zhangsan"};
+    const resFN = fn11.call(obj);
+    resFN();
+
+    // 返回对象得加小括号
+    let newObj = id => ({
+        id:id,
+        name:'吴雪'
+    });
+    let myObj = newObj(14);
+    console.log(myObj);
+</script>
+
+</body>
+</html>

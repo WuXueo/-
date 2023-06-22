@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let person = {name: "吴雪" , age:20 , sex:'女'};
+        // es6新写法
+        let {name , age,sex} = person;
+        console.log(name);
+        console.log(age);
+        console.log(sex);
+
+        let {name :myName} = person;
+        console.log(myName);
+
+        // 完全解构
+        let node = {
+            type:'小米',
+            name1:'鼠'
+        };
+        let{type,name1} = node;
+        console.log(type,name1);
+
+        // 部分解构
+        let obj ={
+            a:{
+                name:'张三'
+            },
+            b: [],
+            c:'hello world'
+        };
+        let {a} = obj;
+        console.log(a);
+        let {...ary} = obj;
+        console.log(ary);
+
+        // 默认值 对数组解构
+        let arr1 = [1,2,3];
+        let [d,e,f] = arr1;
+        console.log(d,e,f);
+
+        // 可嵌套
+        let [x,[y],z] = [1,[2],3];
+        console.log(x,y,z);
+    </script>
+    
+</body>
+</html>

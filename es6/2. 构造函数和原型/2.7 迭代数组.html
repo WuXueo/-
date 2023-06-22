@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // foreach()遍历数组
+        var arr =[1,2,3];
+        sum = 0;
+        arr.forEach(function(value,index,array){
+            console.log('当前数组的元素的值' + value);
+            console.log('当前数组的索引' + index);
+            console.log('当前数组本身' + array);
+            sum += value;
+        })
+        console.log(sum);
+
+        // filter()筛选数组 返回一个新数组
+        var arr = [11,66,88];
+        var new_arr = arr.filter(function(value,index){
+            // 返回数组中的偶数
+            return value % 2 ==0;
+            // // 返回数组中比20大的数组
+            // return value > 20;
+        });
+        console.log(new_arr);
+
+        // some() 查找元素中是否满足条件的元素
+        var arr = [12,20,22,33]
+        var new_arr = arr.some(function(value){
+            // // 查找数组中是否有值大于20的存在
+            // return value > 20;
+            // 查找数组中是否有值小于10的存在
+            return value < 10;
+        });
+        console.log(new_arr);
+
+
+    </script>
+</body>
+</html>

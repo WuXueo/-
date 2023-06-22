@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div>
+    <!-- <ul>
+        <li>
+            吴雪
+        </li>
+    </ul> -->
+
+</div>
+
+    <script>
+        // 可以解析变量
+        let string = `这是一个叫吴雪的`;
+        console.log(string);
+        let string1 = `介绍一下 ${string}`;
+        console.log(string1);
+
+        // 可以换行
+        let res = {
+            name:'zhangsan',
+            age :20
+        };
+        let html = `
+        <div>
+            <span>${res.name}</span>
+            <span>${res.age}</span>
+        </div>
+        `
+        console.log(html);
+        
+        // 可以调用函数
+        const fn  = () => {
+            return '我是吴雪'
+        };
+        let h = `模板字符串可以调用函数${fn()}`;
+        console.log(h);
+        console.log('------------------------------');
+
+        // 小练习
+        let box = document.querySelector('div');
+        let name = '吴雪';
+        box.innerHTML =  ` <ul><li>${name}</li></ul>`
+
+    </script>
+
+</body>
+</html>

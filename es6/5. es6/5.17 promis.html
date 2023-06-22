@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // let pro = new Promise(function(resolved,rejected){
+
+    //     // 执行异步操作
+    //     let res = {
+    //         code:201,
+    //         data:{
+    //             name:'吴雪'
+    //         },
+    //         error:'失败'
+    //     }
+
+    //     setTimeout(() =>{
+    //         if(res.code === 200){
+    //             resolved(res.data);
+    //         }else{
+    //             rejected(res.error);
+    //         }
+    //     },1000)
+    // })
+    // console.log(pro);
+    // pro.then((val) =>{
+    //     console.log(val);
+    // },(err)=>{
+    //     console.log(err);
+    // });
+
+    function timeout(ms){
+        return new Promise((resolved,rejected) =>{
+            setTimeout(() => {
+                resolved('hello promise success');
+            })
+        },ms)
+    }
+    timeout(2000).then((val) => {
+        console.log(val);
+    });
+
+
+    // const getJson = function (){
+    //     return new Promise((resolved,rejected) => {
+    //         const xhr = new XMLHttpRequest();
+    //         xhr.open('Get',url);
+    //         // 当前状态发生改变
+    //         xhr.onreadystatechange = handler;
+    //         xhr.responseType = 'json';
+    //         xhr.setRequestHeader('Accept','application/json');
+    //         // 发送
+    //         xhr.send();
+    //         function handler(){
+    //             console.log(this.readyState);
+
+    //             if(this.readyState === 4){
+    //                 if(this.status === 200){
+    //                     resolved(this.response);
+    //                 }else{
+    //                     rejected(new Error(this.statusText));
+    //                 }
+    //             }
+    //         }
+    //     })
+    // }
+
+    // getJson('请求的url').then((data) => {
+    //     console.log(data);
+    // }, (error)=>{
+    //     console.log(error);
+    // })
+
+
+    // then()方法
+
+    // getJson('请求的url').then((data)=>{
+    //     console.log(data);
+    // }).catch(err => {
+
+    // })
+
+    // resolve() reject() all() race() done() finally()
+    // let p = Promise.resolve('foo');
+    let p = new Promise( resolve => resolve('foo'));
+    p.then((data) => {
+        console.log(data);
+    })
+
+    // all()
+    let promise1 = new Promise((resolve,reject) => {});
+    let promise2 = new Promise((resolve,reject) => {});
+    let promise3 = new Promise((resolve,reject) => {});
+
+    let p4 = Promise.all([promise1,promise2,promise3]);
+    p4.then(() => {
+            // 三个都成功 才成功
+
+    }).catch((err) => {
+        // 有一个失败 则失败
+
+    })
+
+    // race()
+    function requestImg(imgSrc){
+        return new Promise((resolve,reject) => {
+            const img = new Image();
+            img.onload = function(){
+                resolve(img);
+            }
+            img.src = imgSrc;
+        });
+    };
+
+    function timeout(){
+        return new Promise((resolve,reject) => {
+            setTimeout(() => {
+                reject('图片请求失败')
+            },3000);
+        })
+    }
+
+    // 三秒之后成功返回res  否则返回错误
+    Promise.race([requestImg('https://www.duitang.com/blog/?id=1412367886'),timeout()]).then((res) => {
+        console.log(res);
+    }).catch((err) => {
+        console.log(err);
+    })
+</script>
+
+</body>
+</html>

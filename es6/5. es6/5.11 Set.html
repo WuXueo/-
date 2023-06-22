@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 创建set 数据结构
+        const s1 = new Set();
+        console.log(s1.size);
+
+        const s2 = new Set(['a','b']);
+        console.log(s2.size);
+
+        // set数组去重
+        const s3 = new Set(['a','a','b']);
+        // 将s3变成了一个以逗号分隔的数组
+        let arr = [...s3];
+        console.log(arr);
+
+        // 实例方法
+        let ss = new Set();
+        // 添加
+        let ss1 = ss.add(1).add(2).add(3);
+        console.log(ss1.size);
+        console.log('----------------------');
+        // 删除
+        let ss2 = ss.delete(3);
+        console.log(ss1.size);
+        console.log(ss2);
+        console.log('----------------------');
+        // 包含
+        let ss3 = ss.has(2);
+        console.log(ss3);
+        console.log('----------------------');
+        // 清除
+        let ss4 = ss.clear();
+        console.log(ss.size);
+
+        // set遍历数组
+        const s5 = [1,2,5,3,6];
+        s5.forEach( value => console.log(s5));
+
+        // set中对象无法被释放
+        // let set3 = new Set(),obj = {};
+        // set3.add(obj);
+        // // 释放当前的资源
+        // obj =null;
+        // console.log(set3);
+
+        let s4 = new  WeakSet(),obj = {};
+        s4.add(obj);
+        // 释放当前的资源
+        obj =null;
+        console.log(s4);;
+</script>
+    
+</body>
+</html>

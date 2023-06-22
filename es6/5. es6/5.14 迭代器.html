@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // const items = ['one','two','three'];
+        // console.log(items);
+        // 调用遍历器的方法console.log(ite.next());     
+        const items = ['one','two','three'];
+        const ite = items[Symbol.iterator]();              // {value:'one',done:false} done如果为false表示还可以继续遍历 如果为true 表示不能继续遍历
+        console.log(ite.next());
+        console.log(ite.next());
+        console.log(ite.next());
+        console.log(ite.next());
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 都await都执行完才能返回结果
+        async function f(){
+            // return await 'hello async';
+            let s = await 'hello async';
+            let data = await s.split('');
+            return data;
+        }
+        f().then( v=> {console.log(v);}).catch( e => console.log(e));
+
+        async function f2(){
+            // throw new Error('出错了');
+            try{
+                await Promise.reject('出错了');
+            }
+            catch{
+
+            }
+            return await Promise.resolve('hello');
+        }
+        f2().then( v => console.log(v)).catch( e => console.log(e));
+    </script>
+
+</body>
+</html>

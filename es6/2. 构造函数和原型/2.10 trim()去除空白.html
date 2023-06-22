@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button>提交</button>
+    <div></div>
+    <script>
+        var str ='        吴雪       ';
+        console.log(str);
+        // 去除字字符串两边空格
+        var str1 = str.trim();
+        console.log(str1);
+
+        // 类似聊天框案例
+        // 获取元素
+        var input = document.querySelector('input');
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        // 如果用户输入的内容为空 则弹出提示框
+        btn.addEventListener('click',function(){
+            // 但如果用原始方法 用户输入空格的话还是不会出现提醒 那么就得引用trim() 去重新构造一个新的字符串
+            var str = input.value.trim();
+            if(str == ''){
+            alert('请输入内容');
+        }
+        else{
+            div.innerHTML = str;
+        }
+        console.log(str);
+        console.log(str.length)
+        })
+    </script>
+</body>
+</html>

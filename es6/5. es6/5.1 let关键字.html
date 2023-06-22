@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>    
+        // let用来声明变量 只能访问大括号内的
+        // if(true){
+        //     let a = 10;
+        //     console.log(a);
+        // }
+        // console.log(a);
+
+        // var不具备块级作用域
+        // if(true){
+        //     let num = 10;
+        //     var numm = 100;
+        // }
+        // console.log(numm);
+        // console.log(num);
+
+        // 防止循环变量变成全局变量
+        // for (var i = 0; i <2; i ++){
+
+        // }
+        // console.log(i);             // 输出 i =2
+
+        // for(let o = 0;o < 2 ;o ++){
+
+        // }
+        // console.log(o);             // 输出未定义
+
+        // // 没有变量提升
+        // console.log(A);
+        // let A  = 100;       // 未定义
+
+        // 暂时性死区
+        var tmp = 123;
+        if(true){
+                tmp = 'abc';
+                let tmp;            // 未定义
+        }
+    </script>
+    
+</body>
+</html>

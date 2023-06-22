@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 闭包：我们func这个函数作用域 访问了另外一个函数 fn  里面的局部变量num
+        // 我们fn 外面的作用域  可以访问fn 内部的局部变量
+        // function fn(){
+        //     var num = 10;
+
+        //     function func(){
+        //         console.log(num);
+        //     }
+        //     func();
+        // };
+
+        // fn();
+
+         function fn(){
+            var num = 10;
+
+            function func(){
+                console.log(num);
+            }
+            return func;
+        };
+
+        var f = fn();
+        // 类似于var f = function fun(){
+        //     console.log(num);
+        // }
+
+        // 闭包的主要作用：延伸了变量的作用范围
+
+        // 可以写成这样
+        function fn(){
+            var num = 10;
+
+            return function(){
+                console.log(num);
+            }
+        }
+        var f = fn();
+        f();
+    </script>
+    
+</body>
+</html>

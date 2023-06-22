@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+            var rg = /123/;     // 正则表达式里面不需要加引号 无论是数字型还是字符串型
+            // /123/ 主要包含有123这个数字的都返回true
+            console.log(rg.test('123'));
+            console.log(rg.test('1234'));
+            console.log(rg.test('12344'));
+            console.log('----------------');
+            // 必须要以abc开头
+            var rg1 = /^abc/;
+            console.log(rg1.test('abc'));
+            console.log(rg1.test('aabc'));
+            console.log(rg1.test('abcaa'));
+            console.log('----------------');
+            // 精确匹配 必须是abc组合才规范
+            var reg = /^abc$/;
+            console.log(reg.test('abc'));
+            console.log(reg.test('abcd'));
+            console.log(reg.test('abcdd'));
+            console.log('----------------');
+    </script>
+
+    
+</body>
+</html>

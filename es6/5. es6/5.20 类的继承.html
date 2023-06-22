@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+    // 创建父类
+    class Animal{
+        constructor(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        SayName(){
+            return this.name;
+        }
+        SayAge(){
+            return this.age;
+        }
+    }
+    // 创建子类 继承父类
+    class Dog extends Animal{
+        constructor(name,age,color){
+            // 继承父类的属性 super 超类 相当于call Animal.call(this,name,age);
+            super(name,age);
+            this.color = color;
+        }
+        // 子类自己的方法
+        Saycolor(){
+            return `${this.name} 是 ${this.age} 岁了，他的颜色是${this.color}`;
+        }
+        // 重写父类的方法
+        SayName(){
+            return this.name + super.SayAge() + this.color;
+        }
+    }
+
+    let d1 = new Dog('小黄',1,'red');
+    console.log(d1);
+    // 继承父类的方法
+    console.log(d1.SayName());
+    console.log(d1.Saycolor());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var color = ['red','blue','green','pink'];
+        // foreach() 遍历所有元素 不会终止
+        color.forEach(function(value){
+            if(value === 'green')
+           { 
+            console.log('找到了该元素');
+            return true;
+            }
+            console.log(11);
+        })
+
+        // some() 找到元素 遇到return true 就是终止遍历 迭代效率更高
+        color.some(function(value){
+            if(value === 'green'){
+                console.log('找到该元素');
+                return true;
+            }
+            console.log(11);
+        })
+
+        // filter()不会终止迭代
+        color.filter(function(value){
+            if(value === 'green'){
+                console.log('找到该元素');
+                return true;
+            }
+            console.log(11);
+        })
+    </script>
+    
+</body>
+</html>

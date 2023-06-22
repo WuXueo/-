@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // 创建类 调用constructor()函数
+        class Star{
+            constructor(uname,age){
+                this.uname = uname;
+                this.age = age;
+            }
+            act(movie){
+                // console.log('我唱歌');
+                console.log(this.uname + '-' + movie);
+            }
+        }
+
+        // 实例化对象 用类创建对象 new
+        var wx = new Star('吴雪',20);
+        console.log(wx.uname);
+        console.log(wx.age);
+        var pyy = new Star('彭于晏');
+        console.log(pyy.uname);
+        pyy.act('少年俞飞鸿');
+    </script>
+</body>
+</html>

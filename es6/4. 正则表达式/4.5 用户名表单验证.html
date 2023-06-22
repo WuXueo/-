@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin-right: 10px;
+        }
+        span{
+            color: gray;
+            font-size: 14px;
+        }
+        .right{
+            color:green;
+        }
+        .wrong{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" class="uname"><span>请输入用户名</span>
+
+    <script>
+        // 获取元素
+        var uname = document.querySelector('.uname');
+        var span = document.querySelector('span');
+        // 定义符合条件的正则表达式
+        var reg = /^[a-zA-Z0-9_-]{6,16}$/;
+        uname.onblur = function(){
+            // test(被测试的值)是否符合正则表达式
+            if(reg.test(this.value)){
+                // 符合正则表达式 加上样式
+                span.className = 'right';
+                span.innerHTML = '用户名输入正确';
+            }
+            else{
+                span.className = 'wrong';
+                span.innerHTML = '用户名输入不正确';
+            }
+        }
+    </script>
+</body>
+</html>

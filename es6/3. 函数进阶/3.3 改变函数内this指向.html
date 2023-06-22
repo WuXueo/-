@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>发送短信</button>
+    <button>发送</button>
+    <button>发送</button>
+    <script>
+        // var o = {
+        //     name:'吴雪'
+        // }
+        // function fn(){
+        //     console.log(this);
+        // }
+        // // call()立即调用    指向为window
+        // fn.call();
+
+        // 将this改变指向
+        var o = {
+            name:'吴雪'
+        }
+        function fn(a,b){
+            console.log(a+b);
+        }
+        // call()立即调用   call()主要作用可以实现继承
+        fn.call(o,1,2);
+
+        // 
+        function Father(uname,age,sex){
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Son(uname,age,sex){
+            Father.call(this, uname ,age ,sex);
+        }
+        var son = new Son('吴雪',20,'女');
+        console.log(son);
+
+        // apply() 
+        var o = {
+            name : 'andy',
+        }
+        function fn (arr){
+            console.log(this);
+            console.log(arr);   // 打印出来是一个字符串
+        }
+        // 注意 参数必须传递数组形式
+        fn.apply(o,['pink']);
+        // apply() 的主要应用   可以利用apply借助于数学内置对象求最大值
+        // Math.max(); 
+        var arr = [15,22,35,100];
+        // 求数组中最大值
+        var res = Math.max.apply(Math,arr);
+        console.log(res);
+        // 求数组中最小值
+        var min = Math.min.apply(Math,arr);
+        console.log(min);
+
+        // bind()
+        var o ={
+            name: 'andy'
+        }
+        // function fn(){
+        //     console.log(this);
+        // }
+        function fn(a,b){
+            console.log(this);
+            console.log(a +b);
+        }
+        // 将fn函数指向o 仅仅只是绑定了     
+        // 不会返回原来的函数 可以改变函数内部this指向
+        // 返回的是原函数改变this之后产生新函数
+        var f = fn.bind(o,2,2);
+        f();
+
+        // 按钮禁用 三秒后恢复正常 传统方法
+        // 获取元素
+        // var btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     // 点击按钮 就使按钮禁用
+        //     this.disabled = true;
+        //     // 要将现在的this 储存起来
+        //     var that = this;
+        //     // 三秒后恢复正常
+        //     setTimeout(function(){
+        //         // 由于这里的this 指向的是window(指向应当是button)
+        //         that.disabled = false;
+        //     },3000)
+        // }
+
+        // 用bind()方法
+        // 获取元素
+        // var btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     // 点击了按钮 禁用
+        //     this.disabled = true;
+        //     // 三秒后开始可以使用
+        //     setTimeout(function(){
+        //         // 这个this 指向的是window
+        //         this.disabled = false;
+        //         // 由于bind在定时器函数外面 所以可以bind中的this是指向btn按钮的
+        //     }.bind(this),3000)
+        // }
+
+        // 点击三个按钮禁用 让它们三秒钟之后释放
+        // 获取元素
+        var btns = document.querySelectorAll('button');
+        // 开始循环每一个按钮
+        for(var i = 0; i < btns.length; i++){
+            btns[i].onclick = function(){
+                this.disabled = true;
+                // 三秒之后开始使用
+            setTimeout(function(){
+                // 这里的this 指向window
+                this.disabled = false;
+            }.bind(this),3000)    // bind()的this在定时器函数之外 所以指向的是前面的btn[i]
+            }
+        }
+
+    </script>
+</body>
+</html>
