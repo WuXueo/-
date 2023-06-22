@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表</title>
+</head>
+<body>
+<!--列表用法-->
+    <h1>水果</h1>
+<!--无序列表-->
+    <ul>
+        <li>榴莲</li>
+        <li>香蕉</li>
+        <li><b>苹果</b></li>
+    </ul>
+<!--有序列表-->
+    <h1>蔬菜</h1>
+    <ol>
+        <li>西红柿</li>
+        <li>土豆</li>
+    </ol>
+<!--自定义列表-->
+    <dl>
+        <dt>帮助中心</dt>
+        <dd>账户管理</dd>
+        <dd>购物指南</dd>
+    </dl>
+
+<!--表格-->
+    <table border="1" width="500" height="300">
+        <tr>
+            <td>姓名</td>
+            <td>成绩</td>
+            <td>评语</td>
+        </tr>
+        <tr>
+            <td>小哥哥</td>
+            <td>100分</td>
+            <td>真帅气</td>
+        </tr>
+        <tr>
+            <td>郭德纲</td>
+            <td>150分</td>
+            <td>....</td>
+        </tr>
+    </table>
+<!--表格的结构 行 单元格 合并单元格-->
+    <table border="1" width="500" height="300">
+        <caption><strong>学生成绩</strong></caption>
+        <thead>
+            <tr>
+            <th>姓名</th>
+            <th>成绩</th>
+            <th>评语</th>
+            </tr>
+        <tbody>
+        </thead>
+            <tr>
+                <td>张三</td>
+                <td rowspan="2">89</td>
+                <td>可以</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>良</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>总结</td>
+                <td colspan="2">一般</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

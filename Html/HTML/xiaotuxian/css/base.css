@@ -1,0 +1,50 @@
+/* 清除默认 */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 清除列表默认 */
+ul,ol,li{
+    list-style: none;
+}
+/* 清除默认的倾斜效果 */
+em,i{
+    font-style: normal;
+}
+/* 设置img的垂直对齐方式为居中对齐，去除img默认下间距 */
+img{
+    vertical-align: middle;
+}
+/* 清除a标签下划线 并设置字体颜色 */
+a{
+    text-decoration: none;
+    color: #333;
+}
+/* 双伪清除法 */
+.clearfix::before,.clearfix::after{
+    content: "";
+    display: table;
+}
+.clearfix::after{
+    clear:both;
+}
+/* 去除input默认效果 */
+input{
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+body{
+    font: 16px / 1.5;
+    color:#333;
+}
+/* 定义左浮动 */
+.fl{
+    float: left;
+}
+/* 定义右浮动 */
+.fr{
+    float: right;
+}

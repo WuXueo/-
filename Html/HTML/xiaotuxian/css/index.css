@@ -1,0 +1,236 @@
+.banner{
+    height: 500px;
+    color: #f5f5f5;
+}
+
+.banner .wrapped{
+    position: relative;
+    height: 500px;
+}
+
+.banner .aside{
+    /* 下面三行都是定位 */  
+    position: absolute;
+    left:0;
+    top:0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.banner .aside li{
+    height: 50px;
+    line-height: 50px;
+}
+
+.banner .aside  a{
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    padding-right: 19px;
+    height: 50px;
+    color: #fff;
+}
+
+.banner .aside a span{
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.banner .aside a:hover{
+    background-color: #27ba9b;
+}
+
+/* 通过伪元素写精灵图 */
+.banner .aside a::after{
+    content: '';
+    /* 在页面距离效果 */
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    width: 6px;
+    height: 11px;
+    /* 精灵图定位 */
+    background-image: url(../images/sprites.png);
+    background-position: -80px -110px;
+}
+
+
+/* 箭头 */
+.prev,
+.next{
+    display: none;
+    position: absolute;
+    top: 228px;
+    width:45px;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: url(../images/sprites.png);
+    border-radius: 50%;
+}
+/* 改变精灵图的位置  */
+/* 解决位置不准  书写背景图位置属性 运用浏览器调试  2.a负责盒子 可以再添加一个span*/
+.prev{
+    left: 260px;
+    background-position:13px -60px;
+}
+
+.next{
+    right:10px;
+    background-position: -23px -60px;
+}
+ 
+.banner ol{
+    position: absolute;
+    bottom: 30px;
+    left: 680px;
+    height: 10px;
+}
+
+.banner ol li{
+    float: left;
+    margin-right: 24px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255,0.4);
+    cursor: pointer;
+}
+
+.banner ol .current{
+    background-color: #fff;
+}
+
+.goods .hd{
+    height: 114px;
+    line-height: 114px;
+}
+
+.goods .hd h2{
+    float: left;
+    
+    font-size: 29px;
+    color: #333;
+    font-weight: 400;
+    height: 114px;
+}
+
+.goods .hd h2 span{
+    font-size: 16px;
+    margin-left: 34px;
+    color: #999;
+}
+
+.goods .hd a,
+.shengxian .hd .more{
+    float: right;
+    color: #999;
+}
+/* 精灵图 */
+.goods .hd a::after,
+.shengxian .hd .more::after{
+    content: '';
+    display: inline-block;
+    margin-left: 13px;
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/sprites.png);
+    background-position: 0 -110px;
+    vertical-align: middle;
+}
+
+.goods .bd li{
+    position: relative;
+    float: left;
+    width: 300px;
+    height: 405px;
+    background-color: #f0f9f4;
+    margin-right: 8px;
+    text-align: center;
+}
+
+.goods .bd li:last-child{
+    margin-right: 0;
+}
+y
+.goods .bd li img{
+    width: 300px;
+}
+
+.goods .bd li a h3{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.goods .bd li a div{
+    color: #9a2e1f;
+    font-size: 17px;
+}
+
+.goods .bd li a div span{
+    font-size: 23px;
+}
+
+.goods .bd li a b{
+    position: absolute;
+    top:18px;
+    left:17px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid #27ba9b;
+    border-radius: 3px;
+    font-size: 18px;
+    color: #27ba9b;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.shengxian .hd{
+    height: 96px;
+    line-height: 96px;
+}
+
+.shengxian .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.shengxian .hd .more{
+    float: right;
+}
+
+.shengxian .hd ul{
+    float: right;
+    margin-right: 65px;
+}
+
+.shengxian .hd ul li{
+    float:left;
+}
+
+.shengxian .hd li a{
+    padding: 2px 7px;
+    margin-left: 6px;
+    
+}
+
+.shengxian .hd li a:hover{
+    background-color: #27ba9b;
+    color: #fff;
+}
+
+.shengxian .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+ 
+}
+
+.shengxian .bd .right{
+    width:1000px;
+    
+}
+

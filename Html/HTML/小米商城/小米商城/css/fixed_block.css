@@ -1,0 +1,43 @@
+.fixed_block {
+	position: fixed;
+	right: 0;
+	top: 30%;
+	cursor: pointer;
+
+	width: 90px;
+	text-align: center;
+	color: #999999;
+	font-size: 14px;
+	border: 1px solid #e2e2e2;
+	background-color: white;
+}
+
+.fixed_block ul {
+
+	/* border: 1px solid red; */
+}
+
+
+.fixed_block ul li {
+	height: 85px;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.fixed_block ul li:hover {
+	color: #ff6629;
+	transition: 0.5s;
+}
+
+.fixed_block ul li i {
+	display: block;
+	padding-top: 15px;
+	height: 35px;
+	font-size: 25px;
+}
+
+.fixed_block ul li:last-child {
+	border-bottom: none;
+}
+
+
+.fixed_block .top {}
