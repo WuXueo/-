@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery.mini.js"></script>
+</head>
+<body>
+    <button class="btn">Ajax提交</button>
+    <script>
+        $(function(){
+            $('.btn').on('click',function(){
+                $.ajax({
+                    // 发送类型
+                    type:'post',
+                    // 提交请求的网址
+                    url:'http://www.liulongbin.top:3006/api/addbook',
+                    // 提交数据
+                    data:{
+                        bookname:'暴龙战士',
+                        author:'吴雪',
+                        publisher:'山西图书出版社'
+                    },
+                    // 成功之后的回调函数
+                    success:function(res){
+                            console.log();
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+</html>

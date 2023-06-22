@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery.mini.js"></script>
+</head>
+<body>
+    <button class="btn">发起不带参数的GET请求</button>
+    <script>
+        $(function(){
+            $('.btn').on('click',function(){
+                // 发起请求
+                $.get('http://www.liulongbin.top:3006/api/getbooks',function(res){
+                    // 服务器返回的数据
+                    console.log(res);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 第一步 导入模板引擎 多一个template函数 -->
+    <script src="./template-web.js"></script>
+    <script src="../jQuery.mini.js"></script>
+</head>
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <!-- 第三步 定义模板 -->
+    <!-- 模板的HTML结构 必须定义到script中 -->
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}}</h1>
+        {{@ text}}
+    <div>
+        {{if flag === 0}}
+        flag的值是0
+        {{else if flag === 1}}
+        flag的值是1
+        {{/if}}
+    </div>
+
+    <ul>
+        {{each hobby}}
+        <li>索引是:{{$index}},循环项是：{{$value}}</li>
+        {{/each}}
+    </ul>
+       
+    <!-- 传递一个数据值 在通过dateFormat函数进行处理 -->
+    <h3>{{regTime | dateFormat}}</h3>
+    </script>
+
+    <script>
+        // 封装一个函数
+        template.defaults.imports.dateFormat = function(date){
+            var y = date.getFullYear();
+            // 由于月是从0开始 所以要进行+1
+            var m = date.getMonth()+1;
+            var d = date.getDate();
+            // 注意要有返回值
+            return y +' - '+ m +' - '+ d;
+        }
+
+
+
+        // 第二步 定义数据
+        var data = {name:'吴雪',text:'<h3>测试原文输出</h3>',flag:1,hobby:['吃饭','睡觉','敲代码'],regTime:new Date()};
+
+        // 第四步 调用template函数
+        var htmlStr = template("tpl-user",data);
+        console.log(htmlStr);
+
+        // 第五步 渲染
+        $('#container').html(htmlStr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jQuery.mini.js"></script>
+</head>
+<body style="padding:15px">
+    <!-- 添加图书面板 -->
+    <div class="panel panel-primary">
+          <div class="panel-heading">
+                <h3 class="panel-title">添加新图书</h3>
+          </div>
+          <div class="panel-body form-inline">
+                
+                <div class="input-group">
+                    <div class="input-group-addon">书名</div>
+                    <input type="text" class="form-control" id="ipBookname" placeholder="请输入书名">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-addon">作者</div>
+                    <input type="text" class="form-control" id="ipAuthor" placeholder="请输入作者">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-addon">出版社</div>
+                    <input type="text" class="form-control" id="ipPublisher" placeholder="请输入出版社">
+                </div>
+                
+                <button id="btnAdd" class="btn btn-primary">添加</button>
+          </div>
+    </div>
+    
+    <!-- 图书的表格 -->
+    
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="tb"> 
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        $(function(){
+            // 获取图书列表函数
+            function getBook(){
+                // get用来获取
+                $.get('http://www.liulongbin.top:3006/api/getbooks',function(res){
+                    if(res.status !== 200){
+                        return alert('获取数据失败');}
+                    // 进行循环 将获取来的图书列表 追加到图书中
+                    var row = [];
+                    $.each(res.data,function(i,item){
+                        row.push('<tr><td>'+item.id+'</td><td>'+item.bookname+'</td><td>'+item.author+'</td><td>'+item.punisher+'</td><td><a href = "javascript:;" class="del" data-id = "'+item.id+'">删除</a></td></tr>')
+                    });
+                    // 清空数据 防止重复添加
+                    $('.tb').empty().append(row.join(''));
+                })
+                // 为超链接删除绑定事件 由于是动态生成 就得需要事件委托进行冒泡处理
+                $('tbody').on('click','.del',function(){
+                    // 如果点击删除 就会显示该行id
+                    var id = $(this).attr('data-id');
+                    // 进行删除
+                    $.get('http://www.liulongbin.top:3006/api/delbook',{id:id},function(res){
+                        if(res.status !== 200){
+                            return alert('删除图书失败');
+                        };
+                        // 如果没有报错证明删除图书成功 要重新加载图书列表
+                        getBook();                        
+                    })
+                })
+
+                // 添加图书的功能
+                // 按添加按钮绑定事件
+                $('.btn').on('click',function(res){
+                    // 获取三个文本框内容 空格要进行处理trim()
+                    var bookname = $('#ipBookname').val().trim();
+                    var author = $('#ipAuthor').val().trim();
+                    var publisher = $('#ipPublisher').val().trim();
+                    // 要对输入框内容进行限制
+                    if(bookname.length <= 0 || author.length <= 0 || publisher.length <= 0){
+                        alert('请填写完整的图书信息');
+                    }
+                    // 要进行对服务器的发送请求
+                    $.post('http://www.liulongbin.top:3006/api/addbook',{
+                        bookname:bookname,
+                        author:author,
+                        publisher:publisher
+                    },
+                    function(res){
+                        // 如果获取失败 则弹出提示
+                        if(res.status !== 201){
+                            return alert('添加图书失败');
+                        }
+                        // 添加成功之后 刷新图书列表 还要将输入框内容进行清空
+                        getBook();
+                        $('#ipBookname').val('');
+                        $('#ipAuthor').val('');
+                        $('#ipPublisher').val('');
+                    }
+                    )
+                })
+            }
+
+            // 调用函数
+            getBook();
+        })
+    </script>
+</body>
+</html>
